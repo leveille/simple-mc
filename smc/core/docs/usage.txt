@@ -1,0 +1,25 @@
+<?php include_once('/path/to/smc/config.ini.php');?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>SimpleMC Setup</title>
+		
+        <!-- Necessary SimpleMC Stylesheets -->
+        <?php include_once('smc_stylesheets.inc.php'); ?>
+        
+    </head>
+    <body>
+        <!-- Necessary SimpleMC Mask -->
+        <?php include_once('smc_mask.inc.php'); ?>
+		
+        <!-- 
+            Whereever you want to add an editable content block, just add the following code 
+            (which can be obtanined from the administrator) 
+        -->
+        <?php $block->get(contentBlockIDHere); ?>
+		
+        <!-- Necessary SimpleMC JavaScripts -->
+        <?php include_once('smc_javascripts.inc.php'); ?>
+    </body>
+</html>

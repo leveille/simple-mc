@@ -1,0 +1,437 @@
+/*
+cheat - margins/padding:
+top, right, bottom, left
+*/
+
+label .x-form-item-label {
+	display : block !important
+}
+
+html, body {
+   font:normal 12px verdana;
+   margin:0;
+   padding:0;
+   border:0 none;
+   overflow:hidden;
+   height:100%;
+}
+
+p {
+   margin:5px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+#help {
+   padding: 10px;
+}
+
+#help h1 {
+   font: bold 13px Geneva, Arial, Helvetica, sans-serif;
+   color: #000;
+   margin-bottom: 12px;
+}
+
+#help p {
+   margin-bottom: 15px;
+   font: 11px Verdana, Arial, Helvetica, sans-serif;
+}
+
+#help img {
+   border: 2px solid #EAEAEA;
+   background: #FFFFFF;
+   padding: 3px;
+   margin-right: auto;
+   margin-left: auto;
+	height: 1%;
+}
+
+#header {
+   border-bottom: 1px solid #FFFFFF;
+   background: #000000 url(../images/bg/header.png) repeat-x left top;
+   position: relative;
+   font: bold 11px "Trebuchet MS", "Lucida Grande", verdana, arial, helvetica, sans-serif;
+}
+
+#header-nav {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   padding: 5px;
+   background: #2E2E2E;
+   border: 1px dotted #4F4F4F;
+}
+
+#header-nav a {
+   color: snow;
+   text-transform: lowercase;
+   text-decoration: none;
+}
+
+#header-nav a:hover {
+   text-decoration: underline;
+}
+
+#header-nav span#bai_home
+{
+   background: url(../images/icons/fam/house2.png) no-repeat left center;
+   margin-right: 13px;
+   padding-left: 21px;
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+
+#header-nav span#bai_logout
+{
+   background: url(../images/icons/fam/logout2.png) no-repeat left center;
+   padding-left: 19px;
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+
+#south {
+	font-size: 11px;
+	color: #333;
+	padding-right: 5px;
+}
+
+#south p{
+	text-align: right;
+	padding: 0;
+	margin: 0;
+}
+
+#south a{
+   text-decoration: underline;
+	color: #0069AA;
+}
+
+#south a:hover{
+   text-decoration: none;
+}
+
+#loading-mask{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:20000;
+	background: #F0F0F0;
+}
+
+#loading{
+	position: absolute;
+	left: 45%;
+	top: 40%;
+	padding: 1px;
+	z-index: 20001;
+	height: auto;
+	border: 1px solid #DBDBDB;
+	background: white;
+}
+
+#loading img {
+	margin-bottom:5px;
+}
+
+#loading .loading-indicator{
+	background: white;
+	color: #555;
+	font: bold 13px tahoma,arial,helvetica;
+	padding: 8px;
+	margin: 0;
+	text-align: center;
+	height: auto;
+	border: 1px solid #E1E1E1;
+}
+
+.icon-settings {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 0 !important;
+}
+
+.icon-nav {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -35px !important;
+}
+
+.icon-home {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -71px !important;
+}
+
+.icon-logout {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -107px !important;
+}
+
+.icon-add-block {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -144px !important;
+}
+
+.icon-add-block-ctxt {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -146px !important;
+}
+
+.icon-edit-block {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -181px !important;
+}
+
+.icon-edit-block-ctxt {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -183px !important;
+}
+
+.icon-delete-block {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -218px !important;
+}
+
+.icon-delete-block-ctxt {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -220px !important;
+}
+
+.icon-block {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -255px !important;
+}
+
+.icon-user {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -293px !important;
+}
+
+.icon-editor {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -293px !important;
+}
+
+.icon-member {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -293px !important;
+}
+
+.icon-user-female {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -330px !important;
+}
+
+.icon-user-suit {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -367px !important;
+}
+
+.icon-administrator {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -367px !important;
+}
+
+.icon-add-user,
+.icon-submit-user {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -400px !important;
+}
+
+.icon-add-user-ctxt {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -402px !important;
+}
+
+.icon-edit-user {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -437px !important;
+}
+
+.icon-edit-user-ctxt {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -439px !important;
+}
+
+.icon-delete-user {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -474px !important;
+}
+
+.icon-delete-user-ctxt {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -476px !important;
+}
+
+.icon-cancel-action {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -512px !important;
+}
+
+.icon-accordian {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -550px !important;
+}
+
+.icon-gears {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -587px !important;
+}
+
+.icon-submit {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -620px !important;
+}
+
+.icon-cog-go {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -657px !important;
+}
+
+.icon-tab {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -694px !important;
+}
+
+.icon-tab-ctxt {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -696px !important;
+}
+
+.icon-preview-right {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -802px !important;
+}
+
+.icon-preview-bottom {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -836px !important;
+}
+
+.icon-preview-hide {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -874px !important;
+}
+
+/*
+ * Ext JS Library 2.0 Beta 1
+ * Copyright(c) 2006-2007, Ext JS, LLC.
+ * licensing@extjs.com
+ * 
+ * http://extjs.com/license
+ */
+
+.ext-el-mask {
+    background:#dadadb;
+}
+
+.x-grid3-td-title b {
+    font-family:tahoma, verdana;
+    display:block;
+    color:#333;
+}
+
+.x-grid3-td-title b i {
+    font-weight:normal;
+    font-style: normal;
+    color:#000;
+}
+
+.x-grid3-td-title .x-grid3-cell-inner {
+    white-space:normal;
+}
+
+.x-grid3-td-title a {
+    color: #385F95;
+    text-decoration:none;
+}
+
+.x-grid3-td-title a:hover {
+    text-decoration:underline;
+}
+
+.details .x-btn-text {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -731px !important;
+}
+
+.msg-view {
+    background-image: url(../images/icons/fam/application_view_list.png) !important;
+}
+
+.x-grid3-row-body p {
+    margin:5px 20px 10px 25px !important;
+    color:#555;
+}
+
+.x-tree {
+    background:#fff !important;
+}
+
+.forum-ct a span {
+    font-weight:bold;
+    color:#222;
+}
+
+.refresh-icon {
+   background: url(../images/icons/fam/icons-combined.png) no-repeat 0 -768px !important;
+}
+
+.x-tree-selected {
+    border:1px dotted #a3bae9;
+    background:#DFE8F6;
+}
+
+.x-tree-node .x-tree-selected a span{
+   background:transparent;
+   color:#15428b;
+    font-weight:bold;
+}
+
+#main-tabs .x-tab-panel-body {
+    background:transparent;
+    border:0 none;
+}
+
+/* Preview classes */
+
+.preview .x-panel-body {
+    background:#fff;
+    color:#222;
+    font:normal 12px tahoma,verdana,arial,sans-serif;
+}
+
+.preview .x-panel-body p {
+    line-height:18px;
+    margin:8px 0;
+}
+
+.preview .x-panel-body ul {
+    margin-left:18px;
+}
+
+.preview .x-panel-body ul li {
+    display:list-item;
+    list-style-image:none !important;
+    list-style-position:outside !important;
+    list-style-type:disc !important;
+    margin-left:18px;
+}
+
+.preview .x-panel-body pre, #preview .x-panel-body code {
+    background:#f1f1f1;
+    display:block;
+}
+
+.preview .x-panel-body div.content-data {
+    background:#f1f2f4;
+    padding:5px;
+    border-bottom:1px solid #dadadb;
+}
+
+.preview .x-panel-body div.content-source {
+    padding:10px;
+}
+
+.reading-menu .x-menu-item-checked {
+   border:1px dotted #a3bae9 !important;
+   background:#DFE8F6;
+   padding:0;
+}
+
+.x-tab-panel-header {
+    border-bottom-width:0 !important;
+}
+
+.x-combo-list-item {
+    zoom:1;
+}
+
+.x-combo-list-item strong {
+    color:#777;
+    font-size:11px;
+    font-style: normal;
+    float:left;
+}
+
+.x-combo-list-item em {
+    color:#222;
+    font-size:12px;
+    font-style: normal;
+    float:left;
+    width:325px;
+}
+
+.x-node-ctx {
+    background:#eee !important;
+    border:1px solid #ccc !important;
+}
+
+.x-grid3-dirty-cell{background:none !important}

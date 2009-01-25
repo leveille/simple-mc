@@ -1,0 +1,15 @@
+.Left_Align {
+   text-align: left !important;
+}
+
+.Center_Align {
+   text-align: center !important;
+}
+
+.Right_Align {
+   text-align: right !important;
+}
+
+.Strike_Through {
+   text-decoration: line-through !important;
+}

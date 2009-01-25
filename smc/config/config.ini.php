@@ -1,0 +1,23 @@
+<?php   
+    //session_save_path("/path/to/phpsessions");          //This is rare, but if you need to set the session save path do it here  
+    date_default_timezone_set('America/New_York');        //http://us3.php.net/manual/en/timezones.america.php
+    define("ROOT", dirname(dirname(dirname(__FILE__))));  //path to site root, relative to this config file
+    define("SMC_REL", '/smc');                            //the name of your simplemc directory.  This will likely not change
+    define("SMC_CACHE_ENABLED", false);                   //turn on caching for content blocks?
+    define('SMC_DEBUG_MODE', true);                       //Debug mode will serve full CSS/JavaScript files, and will always show errors
+    define('SMC_IE_DEBUG', false);                        //turn on debugging for javascript in IE
+    define('SMC_SHOW_ERRORS', true);                      //show errors (this should only be turned on in development, and never (well, most of the time) in production)
+    define('SMC_LOG_ERRORS', false);                      //should errors be logged?  If so, logs are written to tmp/logs/errors.log
+    define("SMC_THEME", 'gray');                          //the name of the theme to apply
+    
+    //what doctype will you be serving your pages in?  Default is HTML 4.01 Strict.  Options include:
+    /*
+    * HTML 4.01 Strict
+    * HTML 4.01 Transitional
+    * XHTML 1.0 Strict
+    * XHTML 1.0 Transitional
+    * XHTML 1.1
+    */
+    define('SMC_DOC_TYPE', 'HTML 4.01 Strict');     
+    
+    include_once(dirname(dirname(__FILE__)) . '/core/bootstrap.php');

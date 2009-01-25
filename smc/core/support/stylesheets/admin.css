@@ -1,0 +1,206 @@
+* html body{
+   font-size: x-small;
+   f\ont-size: small
+}
+.clearfix:after {
+   content:".";
+   display:block;
+   height:0;
+   clear:both;
+   visibility:hidden
+}
+.clearfix {display:inline-block;}
+
+/* Hide from IE Mac \*/
+.clearfix {display:block;}
+/* End hide from IE Mac */
+
+
+/***
+Administrator Styles
+***/
+
+strong {
+   font-weight: bold;
+}
+
+div.editable {
+	padding: 1px 0px;
+	cursor: pointer;
+}
+
+.focus {
+	border-top: 1px solid #DDDD00;
+	border-bottom: 1px solid #DDDD00;
+	padding: 0px !important;
+	background: #FFFF99 !important;
+}
+
+.focus *
+{
+	color: #000000 !important;
+}
+
+#bai_content 
+{
+	width: 500px;
+   height: 200px;
+}
+
+#login 
+{
+	display: none;
+}
+
+#baiEditor 
+{
+	width: 99.5%;
+	height: 312px;
+}
+
+/*Loading Mask*/
+#loading-mask * 
+{
+	margin: 0;
+	padding: 0;
+}
+
+#loading-mask
+{
+   position:absolute;
+   left:0;
+   top:0;
+   width:100%;
+   height:100%;
+   z-index:20000;
+   background: #F0F0F0;
+}
+
+#loading
+{
+   position: absolute;
+   left: 45%;
+   top: 40%;
+   padding: 1px;
+   z-index: 20001;
+   height: auto;
+   border: 1px solid #DBDBDB;
+   background: white;
+}
+
+#loading img 
+{
+   margin-bottom:5px;
+   vertical-align: middle;
+}
+
+#loading .loading-indicator
+{
+   background: white;
+   color: #555;
+   font: bold 13px tahoma,arial,helvetica;
+   padding: 8px;
+   margin: 0;
+   text-align: center;
+   height: auto;
+   border: 1px solid #E1E1E1;
+}
+
+#bai_toggler
+{
+   position: relative;
+   color: #E4E4E4;
+   background: #F2F2F2;
+   text-transform: lowercase;
+   text-align: right;
+   font: bold 11px "Trebuchet MS", "Lucida Grande", verdana, arial, helvetica, sans-serif;
+   padding-bottom: 6px;
+}
+
+#bai_links
+{
+   text-align: right;
+   padding: 0px 10px 0px 0px;
+   background: #F1F2F4 url(../images/bg/admin-links.jpg) repeat-x left top;
+   border-top: 1px solid #FFFFFF;
+   border-bottom: 1px solid #CCC;
+}
+
+#bai_link_actions
+{
+   position: absolute;
+   top: 10px;
+   right: 17px;
+   padding-top: 3px;
+   padding-bottom: 3px;
+}
+
+#bai_link_actions a
+{
+   color: #000000;
+   text-decoration: none;
+   text-transform: lowercase;
+}
+
+#bai_link_actions span#bai_admn
+{
+   background: url(../images/bg/combined.png) no-repeat 0 -80px;
+   margin-right: 13px;
+   padding-left: 18px;
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+
+#bai_link_actions span#bai_logout
+{
+   background: url(../images/bg/combined.png) no-repeat 0 -124px;
+   padding-left: 18px;
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+
+#bai_link_actions a:hover {
+   text-decoration: underline;
+}
+
+span.bai_block {
+   padding-left: 18px;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   background: url(../images/bg/combined.png) no-repeat 0 -167px;   
+}
+
+#simplemc_logo {
+   margin-left: 10px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   float: left;
+}
+
+#bai_shortcuts
+{
+   padding-bottom: 10px;
+   padding-left: 10px;
+   padding-top: 10px;
+   color: #999999;
+   background: #F8F8F8;
+   border-top: 1px solid #FFFFFF;
+   border-bottom: 1px solid #CCC;
+	text-align: left;
+}
+
+#bai_shortcuts a
+{
+   margin-right: 14px;
+   cursor: pointer;
+   color: #000000;
+   text-decoration: none;
+   border-bottom: 1px dotted #000;
+   line-height: 1.4em;
+}
+
+#bai_shortcuts a:hover
+{
+   background: #FFFF99;
+   border-bottom: 1px solid #DDDD00;
+}

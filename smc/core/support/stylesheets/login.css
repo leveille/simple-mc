@@ -1,0 +1,50 @@
+body {
+    background: #F5F5F5;
+    font: 95% / 1.6em "Lucida Grande", sans-serif;
+    color: #000;
+}
+
+.x-login {
+    padding-top: 100px;
+    background: url(support/images/bg/login.jpg) no-repeat center top;
+    color: #FFFFFF;
+    border: 1px solid #00496C;
+}
+
+.x-login-body {
+    border-top: 1px dotted #FFFFFF;
+    background: #3A3A3A;
+}
+
+.x-form-invalid-icon {
+    background: url(support/images/bg/exclamation.png) no-repeat center center !important;
+}
+
+.icon-unlock {
+    background: url(support/images/bg/lock_open.png) no-repeat left center !important;
+}
+
+#err-msg strong {
+    font-weight: bold;
+}
+
+#err-msg {
+    color: #CC0000;
+    background: url(support/images/bg/icon-error.gif) no-repeat left center;
+    padding-left: 30px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#msg-div {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    z-index: 20000;
+}

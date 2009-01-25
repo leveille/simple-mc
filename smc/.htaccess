@@ -1,0 +1,11 @@
+#Prevent directory browsing
+Options All -Indexes
+
+#Prevent directory listing
+IndexIgnore *
+
+#Prevent acess to multiple file types 
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+   Order Allow,Deny
+   Deny from all
+</FilesMatch>
