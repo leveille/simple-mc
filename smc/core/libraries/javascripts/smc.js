@@ -36,11 +36,13 @@ SMC = function(){
             method: 'POST',
             success: function(result, request)
             {
-                Ext.Msg.alert('Error Logged', 'The date, time, and nature of this error have been logged.  Please notify the administrator.');
+                Ext.Msg.alert('Error Logged', 'The date, time, and nature' + 
+                    ' of this error have been logged.  Please notify the administrator.');
             },
             failure: function(result, request)
             {
-                Ext.Msg.alert('Failed to Log Data', 'The nature of this error could not be logged.  Please notify the administrator of this application.');
+                Ext.Msg.alert('Failed to Log Data', 'The nature of this error' + 
+                    ' could not be logged.  Please notify the administrator of this application.');
             }
         });
     }
@@ -54,7 +56,9 @@ SMC = function(){
     function error(err)
     {
         setError(true);
-        Ext.Msg.alert('Error Encountered?', 'The application has encountered an unexpected error and cannot continue.', logJsError.createCallback(err));
+        Ext.Msg.alert('Error Encountered?', 'The application has' + 
+            ' encountered an unexpected error and cannot continue.', 
+            logJsError.createCallback(err));
     }
     
     /**
@@ -75,12 +79,6 @@ SMC = function(){
             var oEditor = FCKeditorAPI.GetInstance(SMC.editorName);
             return oEditor.GetXHTML();
         };
-        
-        setEditorTitle = function(){
-            var description = requestor.title;
-            description = (description == null || description == "undefined") ? "Content Editor" : 'Currently Editing: ' + description;
-            dialog.setTitle(description);
-        }
 
         getBlockTitle = function(){
             return requestor.title;
@@ -91,7 +89,8 @@ SMC = function(){
                 modal: true,
                 resizable: true,
                 shadow: true,
-                proxyDrag: true,
+                draggable: false,
+                maximizable: true,
                 closable: false,
                 minHeight: 312,
                 minWidth: 572,
@@ -123,14 +122,14 @@ SMC = function(){
             dialog.add(new Ext.Panel('bai-center'));
         }
         
-        dialog.setSize(577, 385);
-        setEditorTitle();
-        dialog.show(requestor);
-        
         //listen for a resize of the dialog window   
         dialog.on('resize', function(window, width, height){
             Ext.get(SMC.editorName + '___Frame').setHeight(dialog.getInnerHeight());            
         }, this);
+                
+        dialog.setSize(577, 385)
+            .setTitle("Content Editor " + requestor.title)
+            .show(requestor);
     }
     
     /**
@@ -150,8 +149,8 @@ SMC = function(){
          * running the check here takes care of the instance when the editor window 
          * is opened, and the admin walks away and comes back
          */
-        var auth = new Auth();
-        auth.authenticate();
+        //var auth = new Auth();
+        //auth.authenticate();
         
         var el = Ext.get(blockId);
         Ext.Ajax.request({
@@ -171,7 +170,9 @@ SMC = function(){
                 });
             },
             failure: function(result, request){
-                Ext.MessageBox.alert('Save Request', 'The application was unable to save your data.  Try again in a few moments.  If this problem persists please contact the application administrator.');
+                Ext.MessageBox.alert('Save Request', 'The application was' + 
+                    ' unable to save your data.  Try again in a few moments.' + 
+                    '  If this problem persists please contact the application administrator.');
             }
         });
     }
@@ -210,8 +211,8 @@ SMC = function(){
         {
             //set up the authentication timer to ensure authentication
             //check every x seconds
-            var auth = new Auth();
-            auth.initiateAuthTaskRunner();
+            //var auth = new Auth();
+            //auth.initiateAuthTaskRunner();
             
             /***
              Iterate over each editable block and append a shortcut to the top admin bar
@@ -237,11 +238,12 @@ SMC = function(){
                 },
                 
                 'div.editable@click': function(e, target){
-                    //assumming we have links in the editable content block, prevent links in those blocks from linking when clicked
+                    //assumming we have links in the editable content block,
+                    //prevent links in those blocks from linking when clicked
                     e.preventDefault();
                     
                     //ensure we have an authenticated user before allowing this request
-                    auth.authenticate();
+                    //auth.authenticate();
                     
                     Ext.get(this.id).removeClass('focus');
                     populateEditor(this, this.id);

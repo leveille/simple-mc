@@ -119,6 +119,18 @@ FCKConfig.ToolbarSets["Basic"] = [
 	['Bold','Italic','-','OrderedList','UnorderedList','-','Link','Unlink','-','About']
 ] ;
 
+FCKConfig.ToolbarSets["SMC"] = [
+    ['Source','-','Cut','Copy','Paste','-','TextColor','BGColor'],
+    ['Undo','Redo','-','Find','Replace','-','SelectAll'],['Image','Table','Rule','SpecialChar'],
+    '/',
+    ['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],
+    ['OrderedList','UnorderedList','-','Outdent','Indent'],
+    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
+    ['Link','Unlink','Anchor'],
+    '/',
+    ['Style','FontFormat']
+] ;
+
 FCKConfig.EnterMode = 'p' ;			// p | div | br
 FCKConfig.ShiftEnterMode = 'br' ;	// p | div | br
 

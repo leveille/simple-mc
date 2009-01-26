@@ -6,7 +6,7 @@ body {
 
 .x-login {
     padding-top: 100px;
-    background: url(support/images/bg/login.jpg) no-repeat center top;
+    background: url(/smc/core/support/images/bg/login.jpg) no-repeat center top;
     color: #FFFFFF;
     border: 1px solid #00496C;
 }
@@ -17,11 +17,11 @@ body {
 }
 
 .x-form-invalid-icon {
-    background: url(support/images/bg/exclamation.png) no-repeat center center !important;
+    background: url(/smc/core/support/images/bg/exclamation.png) no-repeat center center !important;
 }
 
 .icon-unlock {
-    background: url(support/images/bg/lock_open.png) no-repeat left center !important;
+    background: url(/smc/core/support/images/bg/lock_open.png) no-repeat left center !important;
 }
 
 #err-msg strong {
@@ -30,7 +30,7 @@ body {
 
 #err-msg {
     color: #CC0000;
-    background: url(support/images/bg/icon-error.gif) no-repeat left center;
+    background: url(/smc/core/support/images/bg/icon-error.gif) no-repeat left center;
     padding-left: 30px;
 }
 

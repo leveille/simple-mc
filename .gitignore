@@ -1,2 +1,3 @@
 database.config.php
 *.ser
+*.log

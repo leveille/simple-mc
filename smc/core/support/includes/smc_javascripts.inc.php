@@ -6,25 +6,24 @@ if($_SESSION['isAdmin'] || $_SESSION['isEditor']): ?>
     <?php endif; ?>
     
     <?php if(defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE): ?>
-        <script type="text/javascript" src="<?php echo SMC_EXT; ?>/adapter/ext/ext-base.js"></script>
-        <script type="text/javascript" src="<?php echo SMC_EXT; ?>/ext-all.js"></script>
-        <script type="text/javascript" src="<?php echo SMC_FCK; ?>/fckeditor.js"></script>
-       
-        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS; ?>/smc.js"></script>
-        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS; ?>/auth.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/ext-all.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_FCK_REL; ?>/fckeditor.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/smc.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/auth.js"></script>
     <?php else: ?>
         <!-- Implement js minify -->
     <?php endif; ?>
     
-    <script language="javascript" type="text/javascript">
+    <script>
         Ext.onReady(function() {
             try {
                 SMC.smcCore = '<?php echo SMC_CORE_REL; ?>';
                 SMC.editorName = "baiEditor";
                 
                 oFCKeditor = new FCKeditor(SMC.editorName);
-                oFCKeditor.BasePath = "<?php echo SMC_FCK; ?>"
-                oFCKeditor.ToolbarSet = "CMS";
+                oFCKeditor.BasePath = "<?php echo SMC_FCK_REL; ?>/"
+                //oFCKeditor.ToolbarSet = "SMC";
                 oFCKeditor.Height = "317";
                 oFCKeditor.ReplaceTextarea();
        

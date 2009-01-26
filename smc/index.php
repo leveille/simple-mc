@@ -1,26 +1,8 @@
 <?php
-/* SVN FILE: $Id: index.php 107 2008-08-06 16:21:43Z leveillej $ */
-/**
-*
-* SimpleMC - BlueAtlas content manager
-* Copyright 2008 - Present,
-*      19508 Amaranth Dr., Suite D, Germantown, Maryland 20874 | 301.540.5950
-*
-* Redistributions of files must retain the above notice.
-*
-* @filesource
-* @copyright      Copyright 2008 - Present, Blue Atlas Interactive
-* @version         $Rev: 107 $
-* @modifiedby      $LastChangedBy: leveillej $
-* @lastmodified   $Date: 2008-08-06 12:21:43 -0400 (Wed, 06 Aug 2008) $
-*/
 include_once(dirname(__FILE__) . '/config/config.ini.php');
-include_once('minify/_groupsSources.php'); 
-include_once('Minify/Build.php');
 
-if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true)
-{
-    header('Location: ' . BASE_URL);
+if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+    header('Location: ' . ROOT);
 }
 ?>
 
@@ -28,17 +10,21 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true)
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>SimpleMC Login</title>
+        <title>Login</title>
         
-        <?php $css = new Minify_Build($groupsSources['cssLogin']); ?>
-        <link rel="stylesheet" type="text/css" href="<?php echo $css->uri(SMC_REL . '/min.php/cssLogin'); ?>">
-    
+        <?php if(defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE): ?>
+            <link href="<?php echo SMC_EXT_REL . '/resources/css/ext-all.css'; ?>" rel="stylesheet" type="text/css" media="screen">
+            <link href="<?php echo SMC_EXT_REL . '/resources/css/xtheme-gray.css'; ?>" rel="stylesheet" type="text/css" media="screen">
+            <link href="<?php echo SMC_CSS_REL . '/login.css'; ?>" rel="stylesheet" type="text/css" media="screen">
+
+            <script type="text/javascript" src="<?php echo SMC_EXT_REL . '/adapter/ext/ext-base.js'; ?>"></script>
+            <script type="text/javascript" src="<?php echo SMC_EXT_REL . '/ext-all.js'; ?>"></script>
+        <?php else: ?>
+            <!-- Implement js/css minify for production -->
+        <?php endif; ?>
+        
     </head>
-    <body>
-        
-        <?php $js = new Minify_Build($groupsSources['jsLogin']); ?>
-        <script type="text/javascript" src="<?php echo $js->uri(SMC_REL . '/min.php/jsLogin'); ?>"></script>
-        
+    <body>        
         <script type="text/javascript">
             Ext.namespace('SMC_LOGIN');
             
@@ -68,8 +54,7 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true)
                                 
                                 if (success) {
                                     window.location = '<?php echo BASE_URL; ?>';
-                                }
-                                else {
+                                } else {
                                     SMC_LOGIN.msg('Error', message);
                                 }
                                 

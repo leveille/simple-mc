@@ -14,8 +14,8 @@
         <?php include_once('smc_mask.inc.php'); ?>
 		
         <!-- 
-            Whereever you want to add an editable content block, just add the following code 
-            (which can be obtanined from the administrator) 
+            Wherever you want to add an editable content block, just add the following code 
+            (which can be obtained from the back end administrator) 
         -->
         <?php $block->get(contentBlockIDHere); ?>
 		

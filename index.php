@@ -17,7 +17,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             a {color: #006699;text-decoration: underline}
             a:hover {text-decoration: none}
             li {line-height: 1.6em}
-            #container{text-align: left;width: 960px;margin-left: auto;margin-right: auto;background: #FFF;color: #000;padding: 3em;font-size: 90%;border: 1px solid #CCC}
+            #container{text-align: left;width: 90%;margin-left: auto;margin-right: auto;background: #FFF;color: #000;padding: 3em;font-size: 90%;border: 1px solid #CCC}
             div#logo {background: #000000 url(smc/core/support/images/bg/login.jpg) no-repeat left top;height: 8em;margin-bottom: 2em}
             div#logo * {display: none;}
             h2{margin-top: 2em;margin-bottom: 1em;color: #355A8C}
@@ -52,15 +52,17 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             </div>
             
             <ul>
-                <li><strong>Code</strong>: <a href="http://code.google.com/p/simple-mc/">http://code.google.com/p/simple-mc/</a></li>
-                <li><strong>Google Group</strong>: <a href="http://groups.google.com/group/simple-mc">http://groups.google.com/group/simple-mc</a></li>
+                <li><strong>Code</strong>: <a href="http://github.com/leveille/simplemc/tree/master">http://github.com/leveille/simplemc/tree/master</a></li>
+                <li><strong>Issue Tracker</strong>: <a href="http://code.google.com/p/simple-mc/">http://code.google.com/p/simple-mc/</a></li>
                 <li><strong>Live Demo</strong>: <a href="http://jasonleveille.com/bai_cms/">http://jasonleveille.com/bai_cms/</a></li>
                 <li><strong>Original Blog Post</strong>: <a href="http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/">http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/</a></li>
                 <li><strong>A product of</strong>: <a href="http://www.blueatlas.com">Blue Atlas Interactive</a></li>
             </ul>
             
             <h2>Introduction</h2>
-            <p>SimpleMC is meant to provide an easy way for content editors to edit blocks of content. It is meant for smaller sites (thought it has been used on medium sized sites +/- 600 pages), where clients just want to get in, edit some content, and get out. </p>
+            <p>SimpleMC is meant to provide an easy way for content editors 
+            to edit blocks of content. It is meant for smaller sites, where clients 
+            just want to get in, edit some content, and get out.</p>
             
             <h2>Pre-flight Check</h2>
             <!--
@@ -78,6 +80,21 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                         echo '<span class="notice warning">',
                         'Your cache directory is NOT writable.' . '<br>',
                         '<strong>' . 'Location: ' . '</strong>' . SMC_CACHE,
+                        '</span>';
+                    endif;
+                ?>
+            </p>
+            
+            <p>
+                <?php
+                    if (is_writable(SMC_LOGS)):
+                        echo '<span class="notice success">',
+                        'Your log directory is writable.',
+                        '</span>';
+                    else:
+                        echo '<span class="notice warning">',
+                        'Your log directory is NOT writable.' . '<br>',
+                        '<strong>' . 'Location: ' . '</strong>' . SMC_LOGS,
                         '</span>';
                     endif;
                 ?>
@@ -138,7 +155,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             
             <h2>Requirements</h2>
             <ol>
-                <li>PHP 5.2+ w/ MySqli and ctype extensions</li>
+                <li>PHP 5.0.5+</li>
                 <li>MySQL 5.0+</li>
             </ol>
             
@@ -146,16 +163,20 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             <ol>
                 <li>Download and unzip SimpleMC to your desired location.</li>
                     <ul>
-                        <li>At this point you should have a directory structure that looks similar to:<br>
+                        <li>At this point you should have a directory structure that 
+                        looks similar to:<br>
                         &nbsp;/root<br>
                         &nbsp;&nbsp;&nbsp;-index.php<br>
                         &nbsp;&nbsp;&nbsp;-/smc<br>
                         </li>
                     </ul>
                 <li>Create a mysql database for your project</li>
-                <li>Import the sql file into your new database, located at /smc/config/sql/smc.sql</li>
-                <li>Duplicate the database connection file located at /smc/config/database.config.php.default.  Call it database.config.php.</li>
-                <li>Modify the database connection information for the database connection file you just created.</li>
+                <li>Import the sql file into your new database, located at 
+                /smc/config/sql/smc.sql</li>
+                <li>Duplicate the database connection file located at 
+                /smc/config/database.config.php.default.  Call it database.config.php.</li>
+                <li>Modify the database connection information for the database 
+                connection file you just created.</li>
                 <li>Take a look at /smc/config/config.ini.php and modify it if necessary.</li>
                 <li><a href="/smc/">Login to the administrator.</a>
                     <ul>
@@ -164,22 +185,26 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                     </ul>
                 </li>
                 <li>Add some content blocks.</li>
-                <li>Use the <a href="smc/core/docs/usage.txt">sample layout page</a> as a guide to what you should include and where you should include it.</li>
+                <li>Use the <a href="smc/core/docs/usage.txt">sample layout page</a> 
+                as a guide to what you should include and where you should include it.</li>
                 <li>Have fun!</li>
             </ol>
             
             <h2>Running the Demo Application</h2>
             <p>This project does come with a (quickly hobbled together) demonstration application.</p>
             <ol>
-                <li><strong>FYI</strong>, even though the demo is located in the smc directory, it is strongly advised that you do NOT create your site files in the smc directory. Instead, drop the smc directory in your site root and reference the necessary files. </li>
-                <li>Import the /smc/config/sql/dmtek_demo.sql file into the blocks table that you should have in your SimpleMC database</li>
+                <li><strong>FYI</strong>, even though the demo is located in the smc directory, 
+                it is strongly advised that you do NOT create your site files in the smc directory. 
+                Instead, drop the smc directory in your site root and reference the necessary files. </li>
+                <li>Import the /smc/config/sql/dmtek_demo.sql file into the blocks table that 
+                you should have in your SimpleMC database</li>
                 <li>If you haven't already, <a href="smc/">login to the administrator.</a>
                     <ul>
                         <li>un1: admin OR un2: editor</li>
                         <li>pw1: admin OR pw2: editor</li>
                     </ul>
                 </li>
-                <li><a href="smc/tmp/demo">Visit the demo</a>.</li>
+                <li><a href="<?php echo SMC_DEMO_REL; ?>">Visit the demo</a>.</li>
             </ol>
         </div>
         
@@ -189,10 +214,11 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                 if (window.console && console.firebug) {
                     var firebug = document.getElementById('firebug');
                     firebug.style.display = 'block';
-                    firebug.innerHTML = 'It appears that <strong>you have firebug enabled</strong>.  Using firebug with SimpleMC will cause <strong>significant performance degradation</strong>.';
+                    firebug.innerHTML = 'It appears that <strong>you have firebug' + 
+                    ' enabled</strong>.  Using firebug with SimpleMC will cause' + 
+                    ' <strong>significant performance degradation</strong>.';
                 }
             }
         </script>
-
     </body>
 </html>
