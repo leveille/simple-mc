@@ -1,19 +1,4 @@
 <?php
-/* SVN FILE: $Id: Utility.php 100 2008-08-06 13:35:07Z leveillej $ */
-/**
-*
-* SimpleMC - BlueAtlas content manager
-* Copyright 2008 - Present,
-*      19508 Amaranth Dr., Suite D, Germantown, Maryland 20874 | 301.540.5950
-*
-* Redistributions of files must retain the above notice.
-*
-* @filesource
-* @copyright      Copyright 2008 - Present, Blue Atlas Interactive
-* @version        $Rev: 100 $
-* @modifiedby     $LastChangedBy: leveillej $
-* @lastmodified   $Date: 2008-08-06 09:35:07 -0400 (Wed, 06 Aug 2008) $
-*/  
     
 class Utility
 {

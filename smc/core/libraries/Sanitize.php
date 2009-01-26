@@ -1,19 +1,4 @@
 <?php
-/* SVN FILE: $Id: class.Sanitize.php 64 2008-07-29 01:28:07Z leveillej $ */
-/**
-*
-* SimpleMC - BlueAtlas content manager
-* Copyright 2008 - Present,
-*      19508 Amaranth Dr., Suite D, Germantown, Maryland 20874 | 301.540.5950
-*
-* Redistributions of files must retain the above notice.
-*
-* @filesource
-* @copyright      Copyright 2008 - Present, Blue Atlas Interactive
-* @version        $Rev: 64 $
-* @modifiedby     $LastChangedBy: leveillej $
-* @lastmodified   $Date: 2008-07-28 21:28:07 -0400 (Mon, 28 Jul 2008) $
-*/
 
 class Sanitize
 {

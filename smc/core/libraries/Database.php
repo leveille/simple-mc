@@ -1,19 +1,4 @@
 <?php
-/* SVN FILE: $Id$ */
-/**
-*
-* SimpleMC - BlueAtlas content manager
-* Copyright 2008 - Present,
-*      19508 Amaranth Dr., Suite D, Germantown, Maryland 20874 | 301.540.5950
-*
-* Redistributions of files must retain the above notice.
-*
-* @filesource
-* @copyright      Copyright 2008 - Present, Blue Atlas Interactive
-* @version        $Rev$
-* @modifiedby     $LastChangedBy$
-* @lastmodified   $Date$
-*/
 
 include_once('database.config.php');
 

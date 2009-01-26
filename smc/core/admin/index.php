@@ -1,34 +1,21 @@
 <?php
-/* SVN FILE: $Id: index.php 116 2008-08-27 02:21:17Z leveillej $ */
-/**
-*
-* SimpleMC - BlueAtlas content manager
-* Copyright 2008 - Present,
-*      19508 Amaranth Dr., Suite D, Germantown, Maryland 20874 | 301.540.5950
-*
-* Redistributions of files must retain the above notice.
-*
-* @filesource
-* @copyright      Copyright 2008 - Present, Blue Atlas Interactive
-* @version        $Rev: 116 $
-* @modifiedby     $LastChangedBy: leveillej $
-* @lastmodified   $Date: 2008-08-26 22:21:17 -0400 (Tue, 26 Aug 2008) $
-*/
 	include_once(dirname(dirname(dirname(__FILE__))) . '/config/config.ini.php');
 	include_once(dirname(__FILE__) . '/action/verify.php');
-    include_once('minify/_groupsSources.php'); 
-    include_once('Minify/Build.php');
 ?>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Simple MC Content Management</title>
     
-    <?php $css = new Minify_Build($groupsSources['cssBack']); ?>
-    <link rel="stylesheet" type="text/css" href="<?php echo $css->uri(SMC_REL . '/min.php/cssBack'); ?>">
-
+    <?php if(defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE): ?>
+        <link href="<?php echo SMC_EXT_REL; ?>/resources/css/ext-all.css" rel="stylesheet" type="text/css" media="screen"<?php echo SMC_CLOSE_TAG; ?>>
+        <link href="<?php echo SMC_EXT_REL; ?>/resources/css/xtheme-<?php echo SMC_THEME; ?>.css" rel="stylesheet" type="text/css" media="screen"<?php echo SMC_CLOSE_TAG; ?>>
+        <link href="<?php echo SMC_ADMIN_REL; ?>/stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen"<?php echo SMC_CLOSE_TAG; ?>>
+        <link href="<?php echo SMC_CSS_REL; ?>/fck_content.css" rel="stylesheet" type="text/css" media="screen"<?php echo SMC_CLOSE_TAG; ?>>
+    <?php else: ?>
+        <!-- Serve minified css -->
+    <?php endif; ?>
 </head>
 <body scroll="no">
     <div id="loading-mask"></div>
@@ -72,8 +59,16 @@
         <script type='text/javascript' src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script>
     <?php endif; ?>
     
-    <?php $js1 = new Minify_Build($groupsSources['jsBack1']); ?>
-    <script type="text/javascript" src="<?php echo $js1->uri(SMC_REL . '/min.php/jsBack1'); ?>"></script>
+    <?php if(defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE): ?>
+        <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/ext-all.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/auth.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/state/SessionProvider.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_FCK_REL; ?>/fckeditor.js"></script>
+    <?php else: ?>
+        <!-- Implement js minify -->
+    <?php endif; ?>
+    
     <script type="text/javascript" src="<?php echo sprintf('%s/state/save-state.php', SMC_ADMIN_REL); ?>"></script>
     <script type="text/javascript" src="<?php echo sprintf('%s/state/get-state.php', SMC_ADMIN_REL); ?>"></script>
     
@@ -91,7 +86,7 @@
                 {
                     //throughout the duration of this administrative session
                     //ensure that the administrator is logged in
-                    var auth = new Auth({path : SMC_ADMIN.smc_core, timer : 180});
+                    var auth = new Auth({path : SMC_ADMIN.smc_core, timer : 120});
                     auth.initiateAuthTaskRunner();
                     
                     Ext.BLANK_IMAGE_URL = '<?php echo SMC_EXT_REL; ?>/resources/images/default/s.gif';
@@ -108,11 +103,6 @@
                             remove: true
                         });
                     }, 250);
-                },
-                
-                useExtEditor: function()
-                {
-                    return !Ext.isGecko;
                 }
             }
         }();
@@ -124,7 +114,16 @@
         });
         -->
     </script>
-    <?php $js2 = new Minify_Build($groupsSources['jsBack2']); ?>
-    <script type="text/javascript" src="<?php echo $js2->uri(SMC_REL . '/min.php/jsBack2'); ?>"></script>
+    
+    <?php if(defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE): ?>
+        <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/TabCloseMenu.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/AdminLayout.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/AdminPanel.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/ContentGrid.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/MainPanel.js"></script>
+    <?php else: ?>
+        <!-- Implement js minify -->
+    <?php endif; ?>
 </body>
+    
 </html>

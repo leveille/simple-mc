@@ -154,8 +154,9 @@ SMC = function(){
          * running the check here takes care of the instance when the editor window 
          * is opened, and the admin walks away and comes back
          */
-        //var auth = new Auth();
-        //auth.authenticate();
+        
+        var auth = new Auth({path : SMC.smcCore});
+        auth.authenticate()
         
         var id = getId($this);
         var title = $this.title;
@@ -211,12 +212,14 @@ SMC = function(){
     return {
         cp : '', //cookie provider
         editorName : '',
+        smcCore : '',
         init: function()
         {
             //set up the authentication timer to ensure authentication
             //check every x seconds
-            //var auth = new Auth();
-            //auth.initiateAuthTaskRunner();
+            //ensure this user remains logged in
+            var auth = new Auth({path : SMC.smcCore, timer : 120});
+            auth.initiateAuthTaskRunner()
             
             /***
              Iterate over each editable block and append a shortcut to the top admin bar
@@ -247,7 +250,7 @@ SMC = function(){
                     //e.preventDefault();
                     
                     //ensure we have an authenticated user before allowing this request
-                    //auth.authenticate();
+                    auth.authenticate();
 
                     Ext.get(getId(this)).removeClass('focus');
                     populateEditor(this);

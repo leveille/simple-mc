@@ -1,18 +1,3 @@
-/* SVN FILE: $Id: AdminLayout.js 116 2008-08-27 02:21:17Z leveillej $ */
-/**
-*
-* SimpleMC - BlueAtlas content manager
-* Copyright 2008 - Present,
-*      19508 Amaranth Dr., Suite D, Germantown, Maryland 20874 | 301.540.5950
-*
-* Redistributions of files must retain the above notice.
-*
-* @filesource
-* @copyright      Copyright 2008 - Present, Blue Atlas Interactive
-* @version        $Rev: 116 $
-* @modifiedby     $LastChangedBy: leveillej $
-* @lastmodified   $Date: 2008-08-26 22:21:17 -0400 (Tue, 26 Aug 2008) $
-*/
 AdminLayout = {};
 
 Ext.onReady(function(){
