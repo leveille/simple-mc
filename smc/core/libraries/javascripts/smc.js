@@ -62,26 +62,32 @@ SMC = function(){
     }
     
     /**
+     * Return id associated w/ content block
+     * -for now we assume id is an int
+     * @param {Object} $this
+     */
+    function getId($this)
+    {
+        var id = parseInt($this.id, 10).toString();
+        return id;
+    }
+    
+    /**
      * This function is responsible for setting up the html editor 
      * dialog window with the appropriate data and element id
      * 
-     * @param {Object} requestor
-     * @param {String} blockId
+     * @param {Object} $this
      * @scope private
      */
-    function showDialog(requestor, blockId)
+    function showDialog($this)
     {
-        getBlockId = function(){
-            return blockId;
+        getCurrentContentBlock = function(){
+            return $this;
         };
         
         getEditorData = function(){
             var oEditor = FCKeditorAPI.GetInstance(SMC.editorName);
             return oEditor.GetXHTML();
-        };
-
-        getBlockTitle = function(){
-            return requestor.title;
         };
         
         if (!dialog) {
@@ -100,7 +106,7 @@ SMC = function(){
                     scope: this,
                     fn: function()
                     {
-                        save(getEditorData(), dialog, getBlockId());
+                        save(dialog, getEditorData(), getCurrentContentBlock());
                     }
                 }]
             });
@@ -116,7 +122,7 @@ SMC = function(){
                 text: 'Submit',
                 scope: this
             }, function(){
-                save(getEditorData(), dialog, getBlockId(), getBlockTitle());
+                save(dialog, getEditorData(), getCurrentContentBlock());
             });
             
             dialog.add(new Ext.Panel('bai-center'));
@@ -126,23 +132,22 @@ SMC = function(){
         dialog.on('resize', function(window, width, height){
             Ext.get(SMC.editorName + '___Frame').setHeight(dialog.getInnerHeight());            
         }, this);
-                
-        dialog.setSize(577, 385)
-            .setTitle("Content Editor " + requestor.title)
-            .show(requestor);
+               
+        dialog.setSize(window.innerWidth - 100, window.innerHeight - 60)
+            .setTitle("Content Editor " + $this.title)
+            .show($this);
     }
     
     /**
      * This function is responsible for saving 
      * edited content back to the database
      * 
-     * @param {String} blockData
      * @param {Object} dialog
-     * @param {String} blockId
-     * @param {String} description
+     * @param {String} blockData
+     * @param {Object} $this
      * @scope private
      */
-    function save(blockData, dialog, blockId, description)
+    function save(dialog, blockData, $this)
     {
         /*
          * let's ensure that the user is authenticated prior to saving any content
@@ -152,20 +157,22 @@ SMC = function(){
         //var auth = new Auth();
         //auth.authenticate();
         
-        var el = Ext.get(blockId);
+        var id = getId($this);
+        var title = $this.title;
+        
         Ext.Ajax.request({
             url : SMC.smcCore + '/action/update.php',
             params: {
-                element_id: blockId,
+                element_id: id,
                 update_value: blockData,
-                element_description : description
+                element_description : title
             },
             method: 'POST',
             success: function(result, request){
                 dialog.hide();
-                Ext.DomHelper.overwrite(blockId, "", false);
-                Ext.DomHelper.append(blockId, blockData, false);
-                el.frame("93BCF4", 1, {
+                Ext.DomHelper.overwrite(id, "", false);
+                Ext.DomHelper.append(id, blockData, false);
+                Ext.get(id).frame("93BCF4", 1, {
                     duration: 1
                 });
             },
@@ -186,21 +193,18 @@ SMC = function(){
         dialog.hide();
     }
     
-    function populateEditor(requestor, blockId)
+    function populateEditor($this)
     {
-        var el = Ext.get(blockId);
-        var blockData = el.dom.innerHTML;
-
         try {
             //Do not remove the following line, as it is necessary to ensure that
             //the editor will pull valid content from the text area
-            document.getElementById('baiEditor').value = blockData;
+            document.getElementById('baiEditor').value = $this.innerHTML;
             var oEditor = FCKeditorAPI.GetInstance('baiEditor');
-            oEditor.SetHTML(blockData);
+            oEditor.SetHTML($this.innerHTML);
         } catch (err) {
             error(err.toString());
         } finally {
-            showDialog(requestor, blockId);
+            showDialog($this);
         }
     }
     
@@ -218,51 +222,48 @@ SMC = function(){
              Iterate over each editable block and append a shortcut to the top admin bar
              ***/
             Ext.select('.editable').each(function(e){
-                var blockId = this.dom.id;
+                //var blockId = this.dom.id;
                 var description = this.dom.title;
                 Ext.DomHelper.append(
                     'bai_shortcuts', 
                     '<span class="bai_block"><a class="bai_shortcut" href="javascript:void(0);" id="' + 
-                    blockId + '-shortcut">' + description + '</a></span>'
+                    getId(this) + '-shortcut">' + description + '</a></span>'
                 );
             });
             
             Ext.addBehaviors({
             
                 'div.editable@mouseover': function(e, target){
-                    Ext.get(this.id).addClass('focus');
+                    Ext.get(getId(this)).addClass('focus');
                 },
                 
                 'div.editable@mouseout': function(e, target){
-                    Ext.get(this.id).removeClass('focus');
+                    Ext.get(getId(this)).removeClass('focus');
                 },
                 
                 'div.editable@click': function(e, target){
                     //assumming we have links in the editable content block,
                     //prevent links in those blocks from linking when clicked
-                    e.preventDefault();
+                    //e.preventDefault();
                     
                     //ensure we have an authenticated user before allowing this request
                     //auth.authenticate();
-                    
-                    Ext.get(this.id).removeClass('focus');
-                    populateEditor(this, this.id);
+
+                    Ext.get(getId(this)).removeClass('focus');
+                    populateEditor(this);
                 },
                 
                 'a.bai_shortcut@mousedown': function(e, target){
-                    var blockId = parseInt(this.id, 10).toString();
-                    Ext.get(blockId).removeClass('focus');
-                    populateEditor(this, blockId);
+                    Ext.get(getId(this)).removeClass('focus');
+                    populateEditor(this);
                 },
                 
                 'a.bai_shortcut@mouseover': function(e, target){
-                    var blockId = parseInt(this.id, 10).toString();
-                    Ext.get(blockId).addClass('focus');
+                    Ext.get(getId(this)).addClass('focus');
                 },
                 
                 'a.bai_shortcut@mouseout': function(e, target){
-                    var blockId = parseInt(this.id, 10).toString();
-                    Ext.get(blockId).removeClass('focus');
+                    Ext.get(getId(this)).removeClass('focus');
                 }
                 
             });            

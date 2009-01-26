@@ -23,8 +23,8 @@ if($_SESSION['isAdmin'] || $_SESSION['isEditor']): ?>
                 
                 oFCKeditor = new FCKeditor(SMC.editorName);
                 oFCKeditor.BasePath = "<?php echo SMC_FCK_REL; ?>/"
-                //oFCKeditor.ToolbarSet = "SMC";
-                oFCKeditor.Height = "317";
+                oFCKeditor.ToolbarSet = "SMC";
+                oFCKeditor.Height = window.innerHeight - 130;
                 oFCKeditor.ReplaceTextarea();
        
                 SMC.init();
