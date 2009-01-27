@@ -13,26 +13,114 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SimpleMC Setup</title>
         <style type="text/css">
-            body {font:95%/1.125em "Lucida Grande", "Trebuchet MS", Verdana, san-serif;text-align: center;background: #F5F5F5;margin:0;padding: 1em}
-            a {color: #006699;text-decoration: underline}
-            a:hover {text-decoration: none}
-            li {line-height: 1.6em}
-            #container{text-align: left;width: 90%;margin-left: auto;margin-right: auto;background: #FFF;color: #000;padding: 3em;font-size: 90%;border: 1px solid #CCC}
-            div#logo {background: #000000 url(smc/core/support/images/bg/login.jpg) no-repeat left top;height: 8em;margin-bottom: 2em}
-            div#logo * {display: none;}
-            h2{margin-top: 2em;margin-bottom: 1em;color: #355A8C}
-            span {display:block}
-            div#auth {float: right}
-            div#auth li {display: inline;list-style: none}
-            div#auth a {margin-left: .3em}
-            p#firebug {display:none}
-            .error, .notice, .success {padding:.8em;margin-bottom:1em;border:2px solid #ddd;}
-            .error {background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4;}
-            .notice {background:#FFF6BF;color:#514721;border-color:#FFD324;}
-            .success {background:#E6EFC2;color:#264409;border-color:#C6D880;}
-            .error a {color:#8a1f11;}
-            .notice a {color:#514721;}
-            .success a {color:#264409;}
+            body {
+                font:95%/1.125em "Lucida Grande", "Trebuchet MS", Verdana, san-serif;
+                text-align: center;
+                background: #F5F5F5;
+                margin:0;
+                padding: 1em
+            }
+            
+            a {
+                color: #006699;
+                text-decoration: underline
+            }
+            
+            a:hover {
+                text-decoration: none
+            }
+            
+            li {
+                line-height: 1.6em
+            }
+            
+            #container {
+                text-align: left;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                background: #FFF;
+                color: #000;
+                padding: 3em;
+                font-size: 90%;
+                border: 1px solid #CCC
+            }
+            
+            div#logo {
+                background: #000000 url(smc/core/support/images/bg/login.jpg) no-repeat left top;
+                height: 8em;
+                margin-bottom: 2em
+            }
+            
+            div#logo * {
+                display: none
+            }
+            
+            h2 {
+                margin-top: 2em;
+                margin-bottom: 1em;
+                color: #355A8C
+            }
+            
+            span {
+                display:block
+            }
+            
+            div#auth {
+                float: right
+            }
+            
+            div#auth li {
+                display: inline;
+                list-style: none
+            }
+            
+            div#auth a {
+                margin-left: .3em
+            }
+            
+            p#firebug {
+                display:none
+            }
+            
+            .error, 
+            .notice, 
+            .success {
+                padding:.8em;
+                margin-bottom:1em;
+                border:2px solid #ddd
+            }
+            
+            .error {
+                background:#FBE3E4;
+                color:#8a1f11;
+                border-color:#FBC2C4
+            }
+            
+            .notice {
+                background:#FFF6BF;
+                color:#514721;
+                border-color:#FFD324
+            }
+            
+            .success {
+                background:#E6EFC2;
+                color:#264409;
+                border-color:#C6D880
+            }
+            
+            .error a {
+                color:#8a1f11
+            }
+            
+            .notice a {
+                color:#514721
+            }
+            
+            .success a {
+                color:#264409
+            }
+            
             .show {display: block}
         </style>
     </head>
@@ -52,11 +140,24 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             </div>
             
             <ul>
-                <li><strong>Code</strong>: <a href="http://github.com/leveille/simplemc/tree/master">http://github.com/leveille/simplemc/tree/master</a></li>
-                <li><strong>Issue Tracker</strong>: <a href="http://code.google.com/p/simple-mc/">http://code.google.com/p/simple-mc/</a></li>
-                <li><strong>Live Demo</strong>: <a href="http://jasonleveille.com/bai_cms/">http://jasonleveille.com/bai_cms/</a></li>
-                <li><strong>Original Blog Post</strong>: <a href="http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/">http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/</a></li>
-                <li><strong>A product of</strong>: <a href="http://www.blueatlas.com">Blue Atlas Interactive</a></li>
+                <li><strong>Code</strong>: 
+                    <a href="http://github.com/leveille/simplemc/tree/master">
+                    http://github.com/leveille/simplemc/tree/master</a>
+                </li>
+                <li><strong>Issue Tracker</strong>: 
+                    <a href="">http://code.google.com/p/simple-mc/</a>
+                </li>
+                <li><strong>Live Demo</strong>: 
+                    <a href="http://jasonleveille.com/bai_cms/">
+                    http://jasonleveille.com/bai_cms/</a>
+                </li>
+                <li><strong>Original Blog Post</strong>: 
+                    <a href="http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/">
+                    http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/</a>
+                </li>
+                <li><strong>A product of</strong>: 
+                    <a href="http://www.blueatlas.com">Blue Atlas Interactive</a>
+                </li>
             </ul>
             
             <h2>Introduction</h2>
@@ -108,9 +209,9 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                         '</span>';
                     else:
                         echo '<span class="notice warning">',
-                        'The necessary htmlpurifier directory is NOT writable.' . '<br>',
-                        '<strong>' . 'Location: ' . '</strong>' . SMC_HTML_PURIFIER . '/HTMLPurifier/DefinitionCache/Serializer',
-                        '</span>';
+                        'The necessary htmlpurifier directory is NOT writable.<br>',
+                        '<strong>Location: </strong>', SMC_HTML_PURIFIER,
+                        '/HTMLPurifier/DefinitionCache/Serializer</span>';
                     endif;
                 ?>
             </p>
@@ -127,7 +228,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                         echo '<span class="notice warning">',
                         'Your database configuration file is NOT present.',
                         '<br>',
-                        'Rename ', SMC_CONFIG, '<strong>/database.config.php.default</strong> to ', SMC_CONFIG, '<strong>/database.config.php</strong>',
+                        'Rename ', SMC_CONFIG, '<strong>/database.config.php.default</strong> to ', 
+                        SMC_CONFIG, '<strong>/database.config.php</strong>',
                         '</span>';
                     endif;
                 ?>
@@ -144,7 +246,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                         '</span>';
                     else:
                         echo '<span class="notice warning">',
-                        'SimpleMC is NOT able to connect to the database.  Please check your database connection information.',
+                        'SimpleMC is NOT able to connect to the database.  Please check your ', 
+                        'database connection information.',
                         '</span>';
                     endif;
                 ?>
