@@ -93,8 +93,8 @@
                     
                     SMC_ADMIN.oFCKeditor = new FCKeditor('baiEditor');
                     SMC_ADMIN.oFCKeditor.BasePath = "<?php echo SMC_FCK_REL; ?>/";
-                    SMC_ADMIN.oFCKeditor.ToolbarSet = "CMS";
-                    SMC_ADMIN.oFCKeditor.Height = "325";
+                    SMC_ADMIN.oFCKeditor.ToolbarSet = "SMC";
+                    SMC_ADMIN.oFCKeditor.Height = window.innerHeight - 200;
                     
                     //remove load mask
                     setTimeout(function(){

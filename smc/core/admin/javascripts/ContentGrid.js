@@ -29,14 +29,14 @@ ContentGrid = function(viewer, config){
     this.columns = [{
         id: 'id',
         header: "Content ID",
-        width: 15,
+        width: 35,
         sortable: false,
         locked: false,
         renderer: this.formatId,
         dataIndex: 'id'
     }, {
         header: "Description",
-        width: 150,
+        width: 110,
         sortable: false,
         dataIndex: 'description'
     }, {
@@ -220,7 +220,8 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
         //grab the data recrod associated with the selected row
         record = (record && record.data) ? record : this.gsm.getSelected();
         
-        Ext.Msg.confirm('Confirm', 'Are you sure you want to delete the selected content?', function(choice){
+        Ext.Msg.confirm('Confirm', 'Are you sure you want to delete the selected content?', 
+        function(choice){
             if (choice == 'yes') {
                 Ext.Ajax.request({
                     url: 'action/delete-content.php',
@@ -235,7 +236,8 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
                         
                         Ext.Msg.show({
                             title: 'Error',
-                            msg: 'An unexpected error has been encountered. ' + message + ' Please correct this issue and try again.',
+                            msg: 'An unexpected error has been encountered. ' + message + 
+                                ' Please correct this issue and try again.',
                             buttons: Ext.Msg.OK,
                             icon: Ext.MessageBox.ERROR
                         });
@@ -284,11 +286,10 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
         });
         
         var contentMarkup = new Ext.form.TextArea({
-            name: 'markup',
-            id: 'baiEditor',
+            name: 'baiEditor',
             fieldLabel: 'Content',
             allowBlank: false,
-            height: 360,
+            height: window.innerHeight - 200,
             value: '<p>Temporary data holder.</p>',
             anchor: '96%'
         });
@@ -297,7 +298,7 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
             labelWidth: 80, // label settings here cascade unless overridden
             bodyStyle: 'padding:10px',
             autoWidth: true,
-            height: 450,
+            height: window.innerHeight - 110,
             border: false,
             autoDestroy: false,
             labelPad: 10,
@@ -317,7 +318,9 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
             margins: '3 3 3 3',
             activeTab: 0,
             items: [{
-                title: (record && record.data.description) ? "Edit '" + record.data.description + "'" : 'New Content Block',
+                title: (record && record.data.description) 
+                    ? "Edit '" + record.data.description + "'" 
+                    : 'New Content Block',
                 iconCls: icon,
                 border: false,
                 items: [contentForm]
@@ -326,12 +329,15 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
         
         this.win = new Ext.Window({
             title: 'Content Block Management',
-            closable: true,
+            draggable: false,
+            maximizable: true,
+            closable: false,
+            shadow: true,
             modal: true,
             minWidth: 800,
-            width: 800,
+            width: window.innerWidth - 100,
             minHeight: 500,
-            height: 500,
+            height: window.innerHeight - 60,
             resizable: true,
             layout: 'border',
             items: [this.panel],
@@ -350,14 +356,12 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
                     
                     if (action == 'edit') {
                         submitTo = 'action/update-content.php';
-                    }
-                    else {
+                    } else {
                         submitTo = 'action/add-content.php';
                     }
                     
                     if (contentForm.form.isValid()) {
-                        var editorParams = null;
-                        
+                        var editorParams = null;              
                         var oEditor = FCKeditorAPI.GetInstance('baiEditor');
                         editorParams = {
                             cMarkup: oEditor.GetXHTML()
@@ -370,7 +374,7 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
                             waitMsg: 'Updating Content ...',
                             scope: this,
                             success: function(o, r){
-                                this.win.hide();
+                                this.win.close();
                                 this.store.reload();
                             },
                             failure: function(o, r){
@@ -378,7 +382,10 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
                                 
                                 Ext.Msg.show({
                                     title: 'Error',
-                                    msg: 'An unexpected error has been encountered.  The response from the server was: "' + message + '".  If this problem persists, please contact the site administrator.',
+                                    msg: 'An unexpected error has been encountered.  ' + 
+                                        'The response from the server was: "' + message + 
+                                        '".  If this problem persists, please contact the ' + 
+                                        'site administrator.',
                                     buttons: Ext.Msg.OK,
                                     icon: Ext.MessageBox.ERROR
                                 });
@@ -402,7 +409,7 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
                 text: 'Cancel',
                 scope: this,
                 handler: function(){
-                    this.win.hide();
+                    this.win.close();
                 },
                 iconCls: 'icon-cancel-action'
             }]

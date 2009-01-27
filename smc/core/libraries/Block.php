@@ -187,7 +187,7 @@ class Block extends Database
         $mysql['content'] = $this->_db->real_escape_string($clean['content']);
         $mysql['description'] = $this->_db->real_escape_string($clean['description']);
         
-        $sql=sprintf("UPDATE `%sblocks` SET block = '%s', description = '%s' WHERE id = %s",  Database::getTablePrefix(), $mysql['content'], $mysql['description'], $mysql['id']);
+        $sql=sprintf("UPDATE `%sblocks` SET block = '%s', description = '%s' WHERE id = %s",  Database::getTablePrefix(), $mysql['content'], $mysql['description'], $mysql['id']);;
         $this->_db->query($sql);
         $this->_db->close();
         
@@ -221,7 +221,7 @@ class Block extends Database
         $mysql['content'] = $this->_db->real_escape_string($clean['content']);
         $mysql['description'] = $this->_db->real_escape_string($clean['description']);
         
-        $sql=sprintf("UPDATE `%sblocks` SET block = '%s', description = '%s', WHERE id = %s", Database::getTablePrefix(), $mysql['content'], $mysql['description'], $mysql['id']);
+        $sql=sprintf("UPDATE `%sblocks` SET block = '%s', description = '%s' WHERE id = %s", Database::getTablePrefix(), $mysql['content'], $mysql['description'], $mysql['id']);
         $this->_db->query($sql);
         $this->_db->close();
         
