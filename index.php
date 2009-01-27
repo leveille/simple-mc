@@ -145,7 +145,9 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                     http://github.com/leveille/simplemc/tree/master</a>
                 </li>
                 <li><strong>Issue Tracker</strong>: 
-                    <a href="">http://code.google.com/p/simple-mc/</a>
+                    <a href="http://leveille.lighthouseapp.com/projects/24238-simple-mc/overview">
+                        http://leveille.lighthouseapp.com/projects/24238-simple-mc/overview
+                    </a>
                 </li>
                 <li><strong>Live Demo</strong>: 
                     <a href="http://jasonleveille.com/bai_cms/">
@@ -153,7 +155,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                 </li>
                 <li><strong>Original Blog Post</strong>: 
                     <a href="http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/">
-                    http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/</a>
+                        http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/
+                    </a>
                 </li>
                 <li><strong>A product of</strong>: 
                     <a href="http://www.blueatlas.com">Blue Atlas Interactive</a>
