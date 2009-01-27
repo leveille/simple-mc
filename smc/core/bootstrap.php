@@ -19,7 +19,7 @@
     define("SMC_CONFIG", SMC . '/config');
     define("SMC_CLASSES", SMC_CORE . '/libraries');
     define("SMC_INCLUDES", SMC_CORE . '/support/includes');
-    define("SMC_HTML_PURIFIER", SMC_VENDORS . '/htmlpurifier/library');
+    define("SMC_HTML_PURIFIER", SMC_VENDORS . '/htmlpurifiersa');
     define("SMC_MINIFY", SMC_VENDORS . '/minify');
     
     /*

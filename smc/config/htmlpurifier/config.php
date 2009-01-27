@@ -11,7 +11,7 @@
  * @lastmodified   $Date: 2008-08-11 07:53:19 -0400 (Mon, 11 Aug 2008) $
  */
 include_once(dirname(dirname(__FILE__)) . '/config.ini.php');
-include_once('HTMLPurifier.auto.php');
+include_once('HTMLPurifier.standalone.php');
 
 //http://htmlpurifier.org
 function htmlPurifierConfig()
