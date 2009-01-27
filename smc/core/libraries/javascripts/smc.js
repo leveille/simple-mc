@@ -199,13 +199,12 @@ SMC = function(){
         try {
             //Do not remove the following line, as it is necessary to ensure that
             //the editor will pull valid content from the text area
-            document.getElementById('baiEditor').value = $this.innerHTML;
-            var oEditor = FCKeditorAPI.GetInstance('baiEditor');
+            document.getElementById(SMC.editorName).value = $this.innerHTML;
+            var oEditor = FCKeditorAPI.GetInstance(SMC.editorName);
             oEditor.SetHTML($this.innerHTML);
+            showDialog($this);
         } catch (err) {
             error(err.toString());
-        } finally {
-            showDialog($this);
         }
     }
     
@@ -257,8 +256,9 @@ SMC = function(){
                 },
                 
                 'a.bai_shortcut@mousedown': function(e, target){
-                    Ext.get(getId(this)).removeClass('focus');
-                    populateEditor(this);
+                    var $that = Ext.get(getId(this));
+                    $that.removeClass('focus');
+                    populateEditor($that.dom);
                 },
                 
                 'a.bai_shortcut@mouseover': function(e, target){
