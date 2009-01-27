@@ -1,3 +1,5 @@
 database.config.php
 *.ser
 *.log
+*.tmp*
+.project
