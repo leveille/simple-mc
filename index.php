@@ -206,7 +206,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             
             <p>
                 <?php
-                    if (is_writable(SMC_HTML_PURIFIER . '/HTMLPurifier/DefinitionCache/Serializer')):
+                    if (is_writable(SMC_HTML_PURIFIER . '/standalone/HTMLPurifier/DefinitionCache/Serializer')):
                         echo '<span class="notice success">',
                         'The necessary htmlpurifier directory is writable.',
                         '</span>';
@@ -214,7 +214,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                         echo '<span class="notice warning">',
                         'The necessary htmlpurifier directory is NOT writable.<br>',
                         '<strong>Location: </strong>', SMC_HTML_PURIFIER,
-                        '/HTMLPurifier/DefinitionCache/Serializer</span>';
+                        '/standalone/HTMLPurifier/DefinitionCache/Serializer</span>';
                     endif;
                 ?>
             </p>
