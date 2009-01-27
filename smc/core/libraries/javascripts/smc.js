@@ -230,7 +230,7 @@ SMC = function(){
                 Ext.DomHelper.append(
                     'bai_shortcuts', 
                     '<span class="bai_block"><a class="bai_shortcut" href="javascript:void(0);" id="' + 
-                    getId(this) + '-shortcut">' + description + '</a></span>'
+                    this.dom.id + '-shortcut">' + description + '</a></span>'
                 );
             });
             
