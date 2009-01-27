@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . '/config/config.ini.php');
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
-    header('Location: ' . ROOT);
+    header('Location: /');
 }
 ?>
 
