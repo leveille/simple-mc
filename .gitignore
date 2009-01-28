@@ -1,6 +1,8 @@
 database.config.php
 Serializer/*.ser
+Serializer/HTML/*.ser
+Serializer/URI/*.ser
 *.log
 *.tmp*
 .project
-cache/minify_*
+smc/tmp/cache/minify_*
