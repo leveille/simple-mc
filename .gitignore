@@ -1,7 +1,7 @@
 database.config.php
 Serializer/*.ser
-Serializer/HTML/*.ser
-Serializer/URI/*.ser
+Serializer/HTML
+Serializer/URI
 *.log
 *.tmp*
 .project
