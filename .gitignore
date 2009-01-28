@@ -1,5 +1,5 @@
 database.config.php
-*.ser
+Serializer/*.ser
 *.log
 *.tmp*
 .project
