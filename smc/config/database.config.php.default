@@ -1,11 +1,11 @@
 <?php
 class SMC_DB {
-	public static $conf = array(
-		'host' => 'localhost',
-		'username' => 'root',
-		'password' => 'pass',
-		'database' => 'database',
-		'prefix' => 'smc_',
+    public static $conf = array(
+        'host' => 'localhost',
+        'username' => 'root',
+        'password' => 'pass',
+        'database' => 'database',
+        'prefix' => 'smc_',
         'encode' => 'utf8'
 	);
 }
