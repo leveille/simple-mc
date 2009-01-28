@@ -8,13 +8,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Simple MC Content Management</title>
     
-    <?php if(defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE): ?>
-        <link href="<?php echo SMC_EXT_REL; ?>/resources/css/ext-all.css" rel="stylesheet" type="text/css" media="screen"<?php echo SMC_CLOSE_TAG; ?>>
-        <link href="<?php echo SMC_EXT_REL; ?>/resources/css/xtheme-<?php echo SMC_THEME; ?>.css" rel="stylesheet" type="text/css" media="screen"<?php echo SMC_CLOSE_TAG; ?>>
-        <link href="<?php echo SMC_ADMIN_REL; ?>/stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen"<?php echo SMC_CLOSE_TAG; ?>>
-        <link href="<?php echo SMC_CSS_REL; ?>/fck_content.css" rel="stylesheet" type="text/css" media="screen"<?php echo SMC_CLOSE_TAG; ?>>
+    <?php if((defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE) || 
+        (defined('SMC_MINIFY_ENABLED') && !SMC_MINIFY_ENABLED)): ?>
+        <link href="<?php echo SMC_EXT_REL; ?>/resources/css/ext-all.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="<?php echo SMC_EXT_REL; ?>/resources/css/xtheme-gray.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="<?php echo SMC_ADMIN_REL; ?>/stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="<?php echo SMC_CSS_REL; ?>/fck_content.css" rel="stylesheet" type="text/css" media="screen">
     <?php else: ?>
         <!-- Serve minified css -->
+        <link href="<?php echo SMC_MINIFY_REL; ?>/min/g=cssadmin" rel="stylesheet" type="text/css" media="screen">
     <?php endif; ?>
 </head>
 <body scroll="no">
@@ -59,7 +61,8 @@
         <script type='text/javascript' src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script>
     <?php endif; ?>
     
-    <?php if(defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE): ?>
+    <?php if((defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE) || 
+        (defined('SMC_MINIFY_ENABLED') && !SMC_MINIFY_ENABLED)): ?>
         <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/adapter/ext/ext-base.js"></script>
         <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/ext-all.js"></script>
         <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/auth.js"></script>
@@ -67,6 +70,7 @@
         <script type="text/javascript" src="<?php echo SMC_FCK_REL; ?>/fckeditor.js"></script>
     <?php else: ?>
         <!-- Implement js minify -->
+        <script type="text/javascript" src="<?php echo SMC_MINIFY_REL; ?>/min/?g=jsadmin_1"></script>
     <?php endif; ?>
     
     <script type="text/javascript" src="<?php echo sprintf('%s/state/save-state.php', SMC_ADMIN_REL); ?>"></script>
@@ -115,7 +119,8 @@
         -->
     </script>
     
-    <?php if(defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE): ?>
+    <?php if((defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE) || 
+        (defined('SMC_MINIFY_ENABLED') && !SMC_MINIFY_ENABLED)): ?>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/TabCloseMenu.js"></script>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/AdminLayout.js"></script>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/AdminPanel.js"></script>
@@ -123,6 +128,7 @@
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/MainPanel.js"></script>
     <?php else: ?>
         <!-- Implement js minify -->
+        <script type="text/javascript" src="<?php echo SMC_MINIFY_REL; ?>/min/?g=jsadmin_2"></script>
     <?php endif; ?>
 </body>
     

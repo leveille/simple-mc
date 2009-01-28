@@ -5,14 +5,15 @@ if($_SESSION['isAdmin'] || $_SESSION['isEditor']): ?>
         <script type='text/javascript' src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script>
     <?php endif; ?>
     
-    <?php if(defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE): ?>
+    <?php if((defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE) || 
+        (defined('SMC_MINIFY_ENABLED') && !SMC_MINIFY_ENABLED)): ?>
         <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/adapter/ext/ext-base.js"></script>
         <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/ext-all.js"></script>
         <script type="text/javascript" src="<?php echo SMC_FCK_REL; ?>/fckeditor.js"></script>
         <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/smc.js"></script>
         <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/auth.js"></script>
     <?php else: ?>
-        <!-- Implement js minify -->
+        <script type="text/javascript" src="<?php echo SMC_MINIFY_REL; ?>/min/?g=jsfront"></script>
     <?php endif; ?>
     
     <script>

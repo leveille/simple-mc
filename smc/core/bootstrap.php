@@ -21,6 +21,7 @@
     define("SMC_INCLUDES", SMC_CORE . '/support/includes');
     define("SMC_HTML_PURIFIER", SMC_VENDORS . '/htmlpurifiersa');
     define("SMC_MINIFY", SMC_VENDORS . '/minify');
+    define("SMC_MINIFY_REL", SMC_VENDORS_REL . '/minify');
     
     /*
     * Set include path to include paths to classes and bai_cms includes

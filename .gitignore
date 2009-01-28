@@ -3,3 +3,4 @@ Serializer/*.ser
 *.log
 *.tmp*
 .project
+cache/minify_*

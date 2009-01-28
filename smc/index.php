@@ -12,7 +12,8 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Login</title>
         
-        <?php if(defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE): ?>
+        <?php if((defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE) || 
+            (defined('SMC_MINIFY_ENABLED') && !SMC_MINIFY_ENABLED)): ?>
             <link href="<?php echo SMC_EXT_REL . '/resources/css/ext-all.css'; ?>" rel="stylesheet" type="text/css" media="screen">
             <link href="<?php echo SMC_EXT_REL . '/resources/css/xtheme-gray.css'; ?>" rel="stylesheet" type="text/css" media="screen">
             <link href="<?php echo SMC_CSS_REL . '/login.css'; ?>" rel="stylesheet" type="text/css" media="screen">
@@ -21,6 +22,8 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
             <script type="text/javascript" src="<?php echo SMC_EXT_REL . '/ext-all.js'; ?>"></script>
         <?php else: ?>
             <!-- Implement js/css minify for production -->
+            <link href="<?php echo SMC_MINIFY_REL; ?>/min/?g=csslogin" rel="stylesheet" type="text/css" media="screen">
+            <script type="text/javascript" src="<?php echo SMC_MINIFY_REL; ?>/min/?g=jslogin"></script>
         <?php endif; ?>
         
     </head>
