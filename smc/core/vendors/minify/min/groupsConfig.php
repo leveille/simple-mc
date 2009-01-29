@@ -37,12 +37,12 @@ return array(
     'jsadmin_1' => array(
         sprintf('%s/adapter/ext/ext-base.js', SMC_EXT), 
         sprintf('%s/ext-all.js', SMC_EXT), 
+        sprintf('%s/utils.js', SMC_JAVASCRIPTS),
         sprintf('%s/auth.js', SMC_JAVASCRIPTS),
         sprintf('%s/state/SessionProvider.js', SMC_ADMIN),
         sprintf('%s/fckeditor.js', SMC_FCK)
     ),
     'jsadmin_2' => array(
-        sprintf('%s/utils.js', SMC_JAVASCRIPTS),
         sprintf('%s/javascripts/TabCloseMenu.js', SMC_ADMIN), 
         sprintf('%s/javascripts/AdminLayout.js', SMC_ADMIN), 
         sprintf('%s/javascripts/AdminPanel.js', SMC_ADMIN), 

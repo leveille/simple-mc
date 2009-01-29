@@ -65,6 +65,7 @@
         (defined('SMC_MINIFY_ENABLED') && !SMC_MINIFY_ENABLED)): ?>
         <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/adapter/ext/ext-base.js"></script>
         <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/ext-all.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/utils.js"></script>
         <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/auth.js"></script>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/state/SessionProvider.js"></script>
         <script type="text/javascript" src="<?php echo SMC_FCK_REL; ?>/fckeditor.js"></script>
@@ -121,7 +122,6 @@
     
     <?php if((defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE) || 
         (defined('SMC_MINIFY_ENABLED') && !SMC_MINIFY_ENABLED)): ?>
-        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/utils.js"></script>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/TabCloseMenu.js"></script>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/AdminLayout.js"></script>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/AdminPanel.js"></script>
