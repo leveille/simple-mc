@@ -172,7 +172,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             
             <p>
                 <?php
-                    if (!file_exists('/smc/config/config.ini.php')):
+                    if (!file_exists(dirname(__FILE__) . '/smc/config/config.ini.php')):
                         die("Copy /smc/config/config.ini.php.default to /smc/config/config.ini.php before proceeding.");
                     endif;
                 ?>
