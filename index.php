@@ -177,8 +177,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                         '</span>';
                     else:
                         echo '<span class="notice warning">',
-                        'Your cache directory is NOT writable.' . '<br>',
-                        '<strong>' . 'Location: ' . '</strong>' . SMC_CACHE,
+                        'Your cache directory is NOT writable.<br>',
+                        '<strong>Please:</strong> chmod 777 ' . SMC_CACHE,
                         '</span>';
                     endif;
                 ?>
@@ -192,8 +192,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                         '</span>';
                     else:
                         echo '<span class="notice warning">',
-                        'Your log directory is NOT writable.' . '<br>',
-                        '<strong>' . 'Location: ' . '</strong>' . SMC_LOGS,
+                        'Your log directory is NOT writable.<br>',
+                        '<strong>Please:</strong> chmod 777 ',  SMC_LOGS,
                         '</span>';
                     endif;
                 ?>
@@ -208,7 +208,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                     else:
                         echo '<span class="notice warning">',
                         'The necessary htmlpurifier directory is NOT writable.<br>',
-                        '<strong>Location: </strong>', SMC_HTML_PURIFIER,
+                        '<strong>Please: </strong> chmod 777 -R ', SMC_HTML_PURIFIER,
                         '/standalone/HTMLPurifier/DefinitionCache/Serializer</span>';
                     endif;
                 ?>
