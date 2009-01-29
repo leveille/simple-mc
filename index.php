@@ -227,8 +227,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                     if (!file_exists($configDir . $file)):
                         echo '<span class="notice warning">',
                         'Your smc configuration file is NOT present.<br>',
-                        'Rename ', $configDir, '<strong>/config.ini.php.default</strong> to ', 
-                        $configDir, '<strong>/config.ini.php</strong>',
+                        'Rename ', $configDir, '<strong>config.ini.php.default</strong> to ', 
+                        $configDir, '<strong>config.ini.php</strong>',
                         '</span>';
                     endif;
                 ?>
@@ -247,8 +247,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                         echo '<span class="notice warning">',
                         'Your database configuration file is NOT present.',
                         '<br>',
-                        'Rename ', $configDir, '<strong>/database.config.php.default</strong> to ', 
-                        $configDir, '<strong>/database.config.php</strong>',
+                        'Rename ', $configDir, '<strong>database.config.php.default</strong> to ', 
+                        $configDir, '<strong>database.config.php</strong>',
                         '</span>';
                     endif;
                 ?>
