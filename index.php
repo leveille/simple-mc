@@ -169,6 +169,15 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                 http://cakephp.org/
                 license: https://trac.cakephp.org/browser/trunk/cake/1.2.x.x/cake/LICENSE.txt
             -->
+            
+            <p>
+                <?php
+                    if (!file_exists('/smc/config/config.ini.php')):
+                        die("Copy /smc/config/config.ini.php.default to /smc/config/config.ini.php before proceeding.");
+                    endif;
+                ?>
+            </p>
+            
             <p>
                 <?php
                     if (is_writable(SMC_CACHE)):
@@ -213,26 +222,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                     endif;
                 ?>
             </p>
-                 
-            <p>
-                <?php
-                    $filePresent = null;
-                    if (file_exists(SMC_CONFIG . '/config.ini.php')):
-                        echo '<span class="notice success">',
-                        'Your smc configuration file is present.';
-                        $filePresent = true;
-                        echo '</span>';
-                    else:
-                        echo '<span class="notice warning">',
-                        'Your smc configuration file is NOT present.',
-                        '<br>',
-                        'Rename ', SMC_CONFIG, '<strong>/config.ini.php.default</strong> to ', 
-                        SMC_CONFIG, '<strong>/config.ini.php</strong>',
-                        '</span>';
-                    endif;
-                ?>
-            </p>
-            
+                             
             <p>
                 <?php
                     $filePresent = null;
