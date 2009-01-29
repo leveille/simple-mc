@@ -213,6 +213,25 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                     endif;
                 ?>
             </p>
+                 
+            <p>
+                <?php
+                    $filePresent = null;
+                    if (file_exists(SMC_CONFIG . '/config.ini.php')):
+                        echo '<span class="notice success">',
+                        'Your smc configuration file is present.';
+                        $filePresent = true;
+                        echo '</span>';
+                    else:
+                        echo '<span class="notice warning">',
+                        'Your smc configuration file is NOT present.',
+                        '<br>',
+                        'Rename ', SMC_CONFIG, '<strong>/config.ini.php.default</strong> to ', 
+                        SMC_CONFIG, '<strong>/config.ini.php</strong>',
+                        '</span>';
+                    endif;
+                ?>
+            </p>
             
             <p>
                 <?php
