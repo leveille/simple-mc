@@ -88,5 +88,5 @@
     }
     
     if(!defined('PRE_FLIGHT') || !PRE_FLIGHT) {
-        $block  = new Block();
+        $block = new Block();
     }

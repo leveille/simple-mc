@@ -169,25 +169,18 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                 http://cakephp.org/
                 license: https://trac.cakephp.org/browser/trunk/cake/1.2.x.x/cake/LICENSE.txt
             -->
-            
+                       
             <p>
                 <?php
-                    if (!file_exists(dirname(__FILE__) . '/smc/config/config.ini.php')):
-                        die("Copy /smc/config/config.ini.php.default to /smc/config/config.ini.php before proceeding.");
-                    endif;
-                ?>
-            </p>
-            
-            <p>
-                <?php
-                    if (is_writable(SMC_CACHE)):
+                    $dir = dirname(__FILE__) . '/smc/tmp/cache';
+                    if (is_writable($dir)):
                         echo '<span class="notice success">',
                         'Your cache directory is writable.',
                         '</span>';
                     else:
                         echo '<span class="notice warning">',
                         'Your cache directory is NOT writable.<br>',
-                        '<strong>Please:</strong> chmod 777 ' . SMC_CACHE,
+                        '<strong>Please:</strong> chmod 777 ' . $dir,
                         '</span>';
                     endif;
                 ?>
@@ -195,14 +188,15 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             
             <p>
                 <?php
-                    if (is_writable(SMC_LOGS)):
+                    $dir = dirname(__FILE__) . '/smc/tmp/logs';
+                    if (is_writable($dir)):
                         echo '<span class="notice success">',
                         'Your log directory is writable.',
                         '</span>';
                     else:
                         echo '<span class="notice warning">',
                         'Your log directory is NOT writable.<br>',
-                        '<strong>Please:</strong> chmod 777 ',  SMC_LOGS,
+                        '<strong>Please:</strong> chmod 777 ',  $dir,
                         '</span>';
                     endif;
                 ?>
@@ -210,15 +204,32 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             
             <p>
                 <?php
-                    if (is_writable(SMC_HTML_PURIFIER . '/standalone/HTMLPurifier/DefinitionCache/Serializer')):
+                    $dir = dirname(__FILE__) . 
+                        '/smc/core/vendors/htmlpurifiersa/standalone' . 
+                        '/HTMLPurifier/DefinitionCache/Serializer';
+                    if (is_writable($dir)):
                         echo '<span class="notice success">',
                         'The necessary htmlpurifier directory is writable.',
                         '</span>';
                     else:
                         echo '<span class="notice warning">',
                         'The necessary htmlpurifier directory is NOT writable.<br>',
-                        '<strong>Please: </strong> chmod 777 -R ', SMC_HTML_PURIFIER,
-                        '/standalone/HTMLPurifier/DefinitionCache/Serializer</span>';
+                        '<strong>Please: </strong> chmod 777 -R ', $dir, '</span>';
+                    endif;
+                ?>
+            </p>
+            
+            <p>
+                <?php
+                    $filePresent = null;
+                    $configDir = dirname(__FILE__) . '/smc/config/';
+                    $file = 'config.ini.php';
+                    if (!file_exists($configDir . $file)):
+                        echo '<span class="notice warning">',
+                        'Your smc configuration file is NOT present.<br>',
+                        'Rename ', $configDir, '<strong>/config.ini.php.default</strong> to ', 
+                        $configDir, '<strong>/config.ini.php</strong>',
+                        '</span>';
                     endif;
                 ?>
             </p>
@@ -226,7 +237,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             <p>
                 <?php
                     $filePresent = null;
-                    if (file_exists(SMC_CONFIG . '/database.config.php')):
+                    $file = 'database.config.php';
+                    if (file_exists($configDir . $file)):
                         echo '<span class="notice success">',
                         'Your database configuration file is present.';
                         $filePresent = true;
@@ -235,8 +247,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                         echo '<span class="notice warning">',
                         'Your database configuration file is NOT present.',
                         '<br>',
-                        'Rename ', SMC_CONFIG, '<strong>/database.config.php.default</strong> to ', 
-                        SMC_CONFIG, '<strong>/database.config.php</strong>',
+                        'Rename ', $configDir, '<strong>/database.config.php.default</strong> to ', 
+                        $configDir, '<strong>/database.config.php</strong>',
                         '</span>';
                     endif;
                 ?>
