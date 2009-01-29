@@ -1,7 +1,7 @@
 database.config.php
 Serializer/*.ser
-Serializer/HTML
-Serializer/URI
+smc/core/vendors/htmlpurifiersa/standalone/HTMLPurifier/DefinitionCache/Serializer/HTML
+smc/core/vendors/htmlpurifiersa/standalone/HTMLPurifier/DefinitionCache/Serializer/URI
 *.log
 *.tmp*
 .project

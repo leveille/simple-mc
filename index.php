@@ -150,13 +150,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                     </a>
                 </li>
                 <li><strong>Live Demo</strong>: 
-                    <a href="http://jasonleveille.com/bai_cms/">
-                    http://jasonleveille.com/bai_cms/</a>
-                </li>
-                <li><strong>Original Blog Post</strong>: 
-                    <a href="http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/">
-                        http://jasonleveille.com/2008/04/simple-mc-starting-the-open-source-process/
-                    </a>
+                    <a href="http://smc.jasonleveille.com/">
+                    http://smc.jasonleveille.com/</a>
                 </li>
                 <li><strong>A product of</strong>: 
                     <a href="http://www.blueatlas.com">Blue Atlas Interactive</a>
