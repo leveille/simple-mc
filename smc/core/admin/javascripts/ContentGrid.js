@@ -289,7 +289,7 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
             name: 'baiEditor',
             fieldLabel: 'Content',
             allowBlank: false,
-            height: smc_client.viewportHeight - 200,
+            height: smc_client.viewportHeight() - 200,
             value: '<p>Temporary data holder.</p>',
             anchor: '96%'
         });
@@ -298,7 +298,7 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
             labelWidth: 80, // label settings here cascade unless overridden
             bodyStyle: 'padding:10px',
             autoWidth: true,
-            height: smc_client.viewportHeight - 110,
+            height: smc_client.viewportHeight() - 110,
             border: false,
             autoDestroy: false,
             labelPad: 10,
@@ -335,9 +335,9 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
             shadow: true,
             modal: true,
             minWidth: 800,
-            width: smc_client.viewportWidth - 100,
+            width: smc_client.viewportWidth() - 100,
             minHeight: 500,
-            height: smc_client.viewportHeight - 60,
+            height: smc_client.viewportHeight() - 60,
             resizable: true,
             layout: 'border',
             items: [this.panel],

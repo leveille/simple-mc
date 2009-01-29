@@ -133,7 +133,7 @@ SMC = function(){
             Ext.get(SMC.editorName + '___Frame').setHeight(dialog.getInnerHeight());            
         }, this);
                
-        dialog.setSize(window.innerWidth - 100, window.innerHeight - 60)
+        dialog.setSize(smc_client.viewportWidth() - 100, smc_client.viewportHeight() - 60)
             .setTitle("Content Editor " + $this.title)
             .show($this);
     }
