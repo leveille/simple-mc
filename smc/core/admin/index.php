@@ -98,7 +98,7 @@
                     SMC_ADMIN.oFCKeditor = new FCKeditor('baiEditor');
                     SMC_ADMIN.oFCKeditor.BasePath = "<?php echo SMC_FCK_REL; ?>/";
                     SMC_ADMIN.oFCKeditor.ToolbarSet = "SMC";
-                    SMC_ADMIN.oFCKeditor.Height = window.innerHeight - 200;
+                    SMC_ADMIN.oFCKeditor.Height = smc_client.viewportHeight - 200;
                     
                     //remove load mask
                     setTimeout(function(){
@@ -121,6 +121,7 @@
     
     <?php if((defined('SMC_DEBUG_MODE') && SMC_DEBUG_MODE) || 
         (defined('SMC_MINIFY_ENABLED') && !SMC_MINIFY_ENABLED)): ?>
+        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/utils.js"></script>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/TabCloseMenu.js"></script>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/AdminLayout.js"></script>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/javascripts/AdminPanel.js"></script>
