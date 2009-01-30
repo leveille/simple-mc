@@ -1,14 +1,17 @@
 <?php
-/* SVN FILE: $Id: config.php 114 2008-08-11 11:53:19Z leveillej $ */
 /**
+ * SimpleMC - http://github.com/leveille/simple-mc/tree/master
+ * Copyright (C) Blue Atlas Interactive
  *
- * Comment here
+ * == BEGIN LICENSE ==
  *
- * @filesource
- * @copyright      Copyright 2008 - Present Blue Atlas Interactive
- * @version        $Revision: 114 $
- * @modifiedby     $LastChangedBy: leveillej $
- * @lastmodified   $Date: 2008-08-11 07:53:19 -0400 (Mon, 11 Aug 2008) $
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ * == END LICENSE ==
  */
 include_once(dirname(dirname(__FILE__)) . '/config.ini.php');
 include_once('HTMLPurifier.standalone.php');

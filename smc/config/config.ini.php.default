@@ -1,4 +1,18 @@
 <?php   
+/**
+ * SimpleMC - http://github.com/leveille/simple-mc/tree/master
+ * Copyright (C) Blue Atlas Interactive
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ * == END LICENSE ==
+ */
     //session_save_path("/path/to/phpsessions");          //This is rare, but if you need to set the session save path do it here  
     date_default_timezone_set('America/New_York');        //http://us3.php.net/manual/en/timezones.america.php
     define("ROOT", dirname(dirname(dirname(__FILE__))));  //path to site root, relative to this config file
