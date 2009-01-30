@@ -1,6 +1,18 @@
 <?php
 session_start();
 
+$filePresent = null;
+$configDir = dirname(__FILE__) . '/smc/config/';
+$file = 'config.ini.php';
+if (!file_exists($configDir . $file)):
+    $feedback = '<span class="notice warning">' .
+    'Your smc configuration file is NOT present.<br>' .
+    'Rename ' . $configDir . '<strong>config.ini.php.default</strong> to ' . 
+    $configDir . '<strong>config.ini.php</strong>' .
+    '</span>';
+    die($feedback);
+endif;
+
 if(!defined('PRE_FLIGHT')) {
     define('PRE_FLIGHT', true);
 }
@@ -218,22 +230,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                     endif;
                 ?>
             </p>
-            
-            <p>
-                <?php
-                    $filePresent = null;
-                    $configDir = dirname(__FILE__) . '/smc/config/';
-                    $file = 'config.ini.php';
-                    if (!file_exists($configDir . $file)):
-                        echo '<span class="notice warning">',
-                        'Your smc configuration file is NOT present.<br>',
-                        'Rename ', $configDir, '<strong>config.ini.php.default</strong> to ', 
-                        $configDir, '<strong>config.ini.php</strong>',
-                        '</span>';
-                    endif;
-                ?>
-            </p>
-                             
+                                         
             <p>
                 <?php
                     $filePresent = null;
