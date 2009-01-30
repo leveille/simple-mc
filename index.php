@@ -320,6 +320,9 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                 <li>Add some content blocks.</li>
                 <li>Use the <a href="smc/core/docs/usage.txt">sample layout page</a> 
                 as a guide to what you should include and where you should include it.</li>
+                <li>This project uses FCKEditor.  You may need to 
+                <a href="http://www.fckeditor.net/">visit the FCKEditor site</a>
+                and investigate customizing FCKEditor to allow file uploads, etc.</li>
                 <li>Have fun!</li>
             </ol>
             
