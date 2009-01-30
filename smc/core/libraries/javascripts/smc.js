@@ -133,7 +133,7 @@ SMC = function(){
             Ext.get(SMC.editorName + '___Frame').setHeight(dialog.getInnerHeight());            
         }, this);
                
-        dialog.setSize(smc_client.viewportWidth() - 100, smc_client.viewportHeight() - 60)
+        dialog.setSize(SMC_UTILS.viewportWidth() - 100, SMC_UTILS.viewportHeight() - 60)
             .setTitle("Content Editor " + $this.title)
             .show($this);
     }
@@ -155,7 +155,7 @@ SMC = function(){
          * is opened, and the admin walks away and comes back
          */
         
-        var auth = new Auth({path : SMC.smcCore});
+        var auth = new SMC_AUTH({path : SMC.smcCore});
         auth.authenticate()
         
         var id = getId($this);
@@ -217,7 +217,7 @@ SMC = function(){
             //set up the authentication timer to ensure authentication
             //check every x seconds
             //ensure this user remains logged in
-            var auth = new Auth({path : SMC.smcCore, timer : 120});
+            var auth = new SMC_AUTH({path : SMC.smcCore, timer : 120});
             auth.initiateAuthTaskRunner()
             
             /***

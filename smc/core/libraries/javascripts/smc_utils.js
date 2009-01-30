@@ -1,5 +1,5 @@
 //Thanks http://codylindley.com/Webdev/295/javascript-get-page-height-with-scroll
-var smc_client = {
+var SMC_UTILS = {
     viewportWidth: function(){
         return self.innerWidth || (document.documentElement.clientWidth || document.body.clientWidth);
     },

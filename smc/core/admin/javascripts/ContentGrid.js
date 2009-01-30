@@ -265,7 +265,7 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
     contentSave: function(action){
     
         //let's ensure that the user is authenticated prior to saving any content
-        var auth = new Auth({path : SMC_ADMIN.smc_core});
+        var auth = new SMC_AUTH({path : SMC_ADMIN.smc_core});
         auth.authenticate();
         
         var record, panel, win, contentForm, icon;
@@ -289,7 +289,7 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
             name: 'baiEditor',
             fieldLabel: 'Content',
             allowBlank: false,
-            height: smc_client.viewportHeight() - 200,
+            height: SMC_UTILS.viewportHeight() - 200,
             value: '<p>Temporary data holder.</p>',
             anchor: '96%'
         });
@@ -298,7 +298,7 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
             labelWidth: 80, // label settings here cascade unless overridden
             bodyStyle: 'padding:10px',
             autoWidth: true,
-            height: smc_client.viewportHeight() - 110,
+            height: SMC_UTILS.viewportHeight() - 110,
             border: false,
             autoDestroy: false,
             labelPad: 10,
@@ -335,9 +335,9 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
             shadow: true,
             modal: true,
             minWidth: 800,
-            width: smc_client.viewportWidth() - 100,
+            width: SMC_UTILS.viewportWidth() - 100,
             minHeight: 500,
-            height: smc_client.viewportHeight() - 60,
+            height: SMC_UTILS.viewportHeight() - 60,
             resizable: true,
             layout: 'border',
             items: [this.panel],

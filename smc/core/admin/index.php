@@ -65,8 +65,8 @@
         (defined('SMC_MINIFY_ENABLED') && !SMC_MINIFY_ENABLED)): ?>
         <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/adapter/ext/ext-base.js"></script>
         <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/ext-all.js"></script>
-        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/utils.js"></script>
-        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/auth.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/smc_utils.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/smc_auth.js"></script>
         <script type="text/javascript" src="<?php echo SMC_ADMIN_REL; ?>/state/SessionProvider.js"></script>
         <script type="text/javascript" src="<?php echo SMC_FCK_REL; ?>/fckeditor.js"></script>
     <?php else: ?>
@@ -91,7 +91,7 @@
                 {
                     //throughout the duration of this administrative session
                     //ensure that the administrator is logged in
-                    var auth = new Auth({path : SMC_ADMIN.smc_core, timer : 120});
+                    var auth = new SMC_AUTH({path : SMC_ADMIN.smc_core, timer : 120});
                     auth.initiateAuthTaskRunner();
                     
                     Ext.BLANK_IMAGE_URL = '<?php echo SMC_EXT_REL; ?>/resources/images/default/s.gif';
@@ -99,7 +99,7 @@
                     SMC_ADMIN.oFCKeditor = new FCKeditor('baiEditor');
                     SMC_ADMIN.oFCKeditor.BasePath = "<?php echo SMC_FCK_REL; ?>/";
                     SMC_ADMIN.oFCKeditor.ToolbarSet = "SMC";
-                    SMC_ADMIN.oFCKeditor.Height = smc_client.viewportHeight() - 200;
+                    SMC_ADMIN.oFCKeditor.Height = SMC_UTILS.viewportHeight() - 200;
                     
                     //remove load mask
                     setTimeout(function(){

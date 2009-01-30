@@ -24,9 +24,9 @@ return array(
         sprintf('%s/adapter/ext/ext-base.js', SMC_EXT), 
         sprintf('%s/ext-all.js', SMC_EXT), 
         sprintf('%s/fckeditor.js', SMC_FCK), 
-        sprintf('%s/utils.js', SMC_JAVASCRIPTS),
+        sprintf('%s/smc_utils.js', SMC_JAVASCRIPTS),
         sprintf('%s/smc.js', SMC_JAVASCRIPTS), 
-        sprintf('%s/auth.js', SMC_JAVASCRIPTS)
+        sprintf('%s/smc_auth.js', SMC_JAVASCRIPTS)
     ),
     'cssfront' => array(
         sprintf('%s/resources/css/ext-all.css', SMC_EXT), 
@@ -37,8 +37,8 @@ return array(
     'jsadmin_1' => array(
         sprintf('%s/adapter/ext/ext-base.js', SMC_EXT), 
         sprintf('%s/ext-all.js', SMC_EXT), 
-        sprintf('%s/utils.js', SMC_JAVASCRIPTS),
-        sprintf('%s/auth.js', SMC_JAVASCRIPTS),
+        sprintf('%s/smc_utils.js', SMC_JAVASCRIPTS),
+        sprintf('%s/smc_auth.js', SMC_JAVASCRIPTS),
         sprintf('%s/state/SessionProvider.js', SMC_ADMIN),
         sprintf('%s/fckeditor.js', SMC_FCK)
     ),

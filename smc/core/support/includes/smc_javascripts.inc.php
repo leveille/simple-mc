@@ -10,9 +10,9 @@ if($_SESSION['isAdmin'] || $_SESSION['isEditor']): ?>
         <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/adapter/ext/ext-base.js"></script>
         <script type="text/javascript" src="<?php echo SMC_EXT_REL; ?>/ext-all.js"></script>
         <script type="text/javascript" src="<?php echo SMC_FCK_REL; ?>/fckeditor.js"></script>
-        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/utils.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/smc_utils.js"></script>
         <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/smc.js"></script>
-        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/auth.js"></script>
+        <script type="text/javascript" src="<?php echo SMC_JAVASCRIPTS_REL; ?>/smc_auth.js"></script>
     <?php else: ?>
         <script type="text/javascript" src="<?php echo SMC_MINIFY_REL; ?>/min/?g=jsfront"></script>
     <?php endif; ?>
@@ -26,7 +26,7 @@ if($_SESSION['isAdmin'] || $_SESSION['isEditor']): ?>
                 oFCKeditor = new FCKeditor(SMC.editorName);
                 oFCKeditor.BasePath = "<?php echo SMC_FCK_REL; ?>/"
                 oFCKeditor.ToolbarSet = "SMC";
-                oFCKeditor.Height = smc_client.viewportHeight() - 130;
+                oFCKeditor.Height = SMC_UTILS.viewportHeight() - 130;
                 oFCKeditor.ReplaceTextarea();
        
                 SMC.init();

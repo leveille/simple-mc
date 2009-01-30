@@ -1,6 +1,6 @@
-Ext.namespace('Auth');
+Ext.namespace('SMC_AUTH');
 
-Auth = function(config){
+SMC_AUTH = function(config){
     
     var defaultConfig = {
         path : '',
@@ -10,7 +10,7 @@ Auth = function(config){
     Ext.applyIf(this, config, defaultConfig);
 }
 
-Ext.apply(Auth.prototype, {
+Ext.apply(SMC_AUTH.prototype, {
     authTask: null,
     authRunner: null,
     
