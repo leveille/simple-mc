@@ -23,11 +23,11 @@ class Block extends Database
         $this->_sanitize = new Sanitize();
     }
     
-    /***
-    DESCRIPTION: Creates a content block
-    @data (string), @desc (string)
-    POST:	A content block is created
-    ***/
+    /**
+     * Creates a content block
+     * @param string $data
+     * @param string $desc
+     */
     public function create($data, $desc)
     {
         $this->_db = Database::connect();
@@ -57,12 +57,12 @@ class Block extends Database
         }
     }
     
-    /***
-    DESCRIPTION: Grabs data for a content block and wraps it in a _wrapper
-    @id (int)
-    POST:	data is wrapped and returned in _wrapper
-    ***/
-    public function get($id = int)
+    /**
+     * Grabs data for a content block and wraps it in a _wrapper
+     * @return block content
+     * @param string $id
+     */
+    public function get($id)
     {
         $cache = new Cache();
         if(Cache::isEnabled()) {
@@ -102,11 +102,12 @@ class Block extends Database
         return $content;
     }
     
-    /***
-    DESCRIPTION: Grabs raw content block from the database for an id
-    @id (int)
-    ***/
-    public function getUnwrapped($id = int)
+    /**
+     * Grabs raw content block from the database for an id
+     * @return Block content
+     * @param object $id
+     */
+    public function getUnwrapped($id)
     {
         $cache = new Cache();
         if(Cache::isEnabled()) {
@@ -141,10 +142,10 @@ class Block extends Database
         return $this->_sanitize->filter($data['block']);
     }
     
-    /***
-    DESCRIPTION: grabs all content blocks
-    POST: Returns the result set as encoded json
-    ***/
+    /**
+     * grabs all content blocks
+     * @return json_encoded content blocks
+     */
     public function getContentBlocks()
     {     
         $this->_db = Database::connect();
@@ -177,12 +178,13 @@ class Block extends Database
         return '{"results":' . json_encode($arr) . '}';
     }
     
-    /***
-    DESCRIPTION: updates content of a content block
-    @id (int), @content (string), @description (string)
-    POST:	content block is updated w/ new content
-    ***/
-    public function blockUpdate($id = int, $content, $description) 
+    /**
+     * updates content of a content block
+     * @param string $id
+     * @param string $content
+     * @param string $description
+     */
+    public function blockUpdate($id, $content, $description) 
     { 
         $this->_db = Database::connect();
         $clean = array();
@@ -210,12 +212,13 @@ class Block extends Database
         }
     }
     
-    /***
-    DESCRIPTION: updates content of a content block
-    @id (int), @content (string), @description (string)
-    POST: content block is updated w/ new content
-    ***/
-    public function blockUpdateAll($id = int, $content, $description) 
+    /**
+     * updates content of a content block
+     * @param string $id
+     * @param string $content
+     * @param string $description
+     */
+    public function blockUpdateAll($id, $content, $description) 
     { 
         $this->_db = Database::connect();
         $clean = array();
@@ -244,12 +247,11 @@ class Block extends Database
         }
     }
     
-    /***
-    DESCRIPTION: deletes a content block
-    @id (int)
-    POST: content block is removed
-    ***/
-    public function blockDelete($id = int) 
+    /**
+     * deletes a content block
+     * @param string $id
+     */
+    public function blockDelete($id) 
     { 
         $this->_db = Database::connect();
         $clean = array();
@@ -267,13 +269,15 @@ class Block extends Database
             $cache->delete($clean['id']);
         }
     }
-                
-    /***
-    DESCRIPTION: creates an editable wrapper for content blocks
-    @id (int), @data (string), @description (string)
-    POST:	Query data is returned with 0 or more records
-    ***/ 
-    private function _wrapper($id = int, $data, $description) 
+
+    /**
+     * creates an editable wrapper for content blocks
+     * @return content block
+     * @param string $id
+     * @param string $data
+     * @param string $description
+     */
+    private function _wrapper($id, $data, $description) 
     {
         if($this->_isAdmin() || $this->_isEditor()) {
             return sprintf('<div id="%s" class="editable" title="%s">%s</div>', $id, $description, $data);
@@ -282,19 +286,19 @@ class Block extends Database
         }
     }
     
-    /***
-    DESCRIPTION: checks to see if user is admin
-    POST:	Returns true or false
-    ***/
+    /**
+     * checks to see if user is admin
+     * @return bool
+     */
     private function _isAdmin()
     {
         return (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true);
     }
-    
-    /***
-    DESCRIPTION: checks to see if user is an editor
-    POST:	Returns true or false
-    ***/
+
+    /**
+     * checks to see if user is an editor
+     * @return bool
+     */
     private function _isEditor()
     {
         return (isset($_SESSION['isEditor']) && $_SESSION['isEditor'] == true);

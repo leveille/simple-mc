@@ -17,11 +17,12 @@ class Login
 {
     private $_db;
     
-    /***
-    DESCRIPTION: validates a username and password for login
-    PRE:   string alphanum username and password
-    POST:   Query data is returned with 0 or more records
-    ***/
+    /**
+     * tries to fetch a queryset based on username/password
+     * @return queryset object
+     * @param string $username
+     * @param string $password
+     */
     public function validate($username, $password)
     {
         $this->_db = Database::connect();
@@ -51,10 +52,9 @@ class Login
         return $data;
     }   
     
-    /***
-    DESCRIPTION: logout
-    POST: Terminates session
-    ***/
+    /**
+     * logout
+     */
     public function logout()
     {
         $_SESSION = array();
