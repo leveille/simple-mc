@@ -3,6 +3,7 @@ config.ini.php
 Serializer/*.ser
 smc/core/vendors/htmlpurifiersa/standalone/HTMLPurifier/DefinitionCache/Serializer/HTML
 smc/core/vendors/htmlpurifiersa/standalone/HTMLPurifier/DefinitionCache/Serializer/URI
+smc/core/vendors/htmlpurifiersa/standalone/HTMLPurifier/DefinitionCache/Serializer/CSS
 *.log
 *.tmp*
 .project
