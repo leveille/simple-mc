@@ -13,3 +13,6 @@ SimpleMC is meant to provide an easy way for content editors to edit blocks of c
 
 * PHP 5.0.5+
 * MySQL 5.0+
+
+##Supported Browsers##
+* See [Ticket #13](http://leveille.lighthouseapp.com/projects/24238/tickets/13-browser-testing "Ticket 13")
