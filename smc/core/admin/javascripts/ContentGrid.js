@@ -301,6 +301,7 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
         
         var contentMarkup = new Ext.form.TextArea({
             name: 'baiEditor',
+            id: 'baiEditor',
             fieldLabel: 'Content',
             allowBlank: false,
             height: SMC_UTILS.viewportHeight() - 200,
