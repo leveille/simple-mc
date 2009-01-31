@@ -115,6 +115,18 @@ FCKConfig.ToolbarSets["Default"] = [
 	['FitWindow','ShowBlocks','-','About']		// No comma for the last row.
 ] ;
 
+FCKConfig.ToolbarSets["SMC"] = [
+    ['Source','-','Cut','Copy','Paste','-','TextColor','BGColor'],
+    ['Undo','Redo','-','Find','Replace','-','SelectAll'],['Image','Table','Rule','SpecialChar'],
+    '/',
+    ['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],
+    ['OrderedList','UnorderedList','-','Outdent','Indent'],
+    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
+    ['Link','Unlink','Anchor'],
+    '/',
+    ['Style','FontFormat']
+] ;
+
 FCKConfig.ToolbarSets["Basic"] = [
 	['Bold','Italic','-','OrderedList','UnorderedList','-','Link','Unlink','-','About']
 ] ;
