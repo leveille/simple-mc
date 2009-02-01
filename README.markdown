@@ -11,6 +11,7 @@ SimpleMC is meant to provide an easy way for content editors to edit blocks of c
 * [The Code](http://github.com/leveille/simplemc/tree/master "The Code")
 * [Issue Tracking](http://leveille.lighthouseapp.com/projects/24238-simple-mc/overview "Issue Tracking")
 * [Live Demo](http://smc.jasonleveille.com/ "Live Demo")
+* [Google Group](http://groups.google.com/group/simple_mc "Google Group")
 * A product of [Blue Atlas Interactive](http://www.blueatlas.com/ "Blue Atlas Interactive")
 
 ##Requirements##

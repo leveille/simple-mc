@@ -179,6 +179,10 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                     <a href="http://smc.jasonleveille.com/">
                     http://smc.jasonleveille.com/</a>
                 </li>
+                <li><strong>Google Group</strong>: 
+                    <a href="http://groups.google.com/group/simple_mc">
+                    http://groups.google.com/group/simple_mc</a>
+                </li>
                 <li><strong>A product of</strong>: 
                     <a href="http://www.blueatlas.com">Blue Atlas Interactive</a>
                 </li>
@@ -198,15 +202,14 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                        
             <p>
                 <?php
-                    $dir = dirname(__FILE__) . '/smc/tmp/cache';
-                    if (is_writable($dir)):
+                    if (is_writable(SMC_CACHE)):
                         echo '<span class="notice success">',
                         'Your cache directory is writable.',
                         '</span>';
                     else:
                         echo '<span class="notice warning">',
                         'Your cache directory is NOT writable.<br>',
-                        '<strong>Please:</strong> chmod 777 ' . $dir,
+                        '<strong>Please:</strong> chmod 777 ', SMC_CACHE,
                         '</span>';
                     endif;
                 ?>
@@ -214,15 +217,14 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             
             <p>
                 <?php
-                    $dir = dirname(__FILE__) . '/smc/tmp/logs';
-                    if (is_writable($dir)):
+                    if (is_writable(SMC_LOGS)):
                         echo '<span class="notice success">',
                         'Your log directory is writable.',
                         '</span>';
                     else:
                         echo '<span class="notice warning">',
                         'Your log directory is NOT writable.<br>',
-                        '<strong>Please:</strong> chmod 777 ',  $dir,
+                        '<strong>Please:</strong> chmod 777 ',  SMC_LOGS,
                         '</span>';
                     endif;
                 ?>
@@ -230,9 +232,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             
             <p>
                 <?php
-                    $dir = dirname(__FILE__) . 
-                        '/smc/core/vendors/htmlpurifiersa/standalone' . 
-                        '/HTMLPurifier/DefinitionCache/Serializer';
+                    $dir = SMC_HTML_PURIFIER . 
+                        '/standalone/HTMLPurifier/DefinitionCache/Serializer';
                     if (is_writable($dir)):
                         echo '<span class="notice success">',
                         'The necessary htmlpurifier directory is writable.',
@@ -248,8 +249,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             <p>
                 <?php
                     $filePresent = null;
-                    $file = 'database.config.php';
-                    if (file_exists($configDir . $file)):
+                    if (file_exists(SMC_CONFIG . '/database.config.php')):
                         echo '<span class="notice success">',
                         'Your database configuration file is present.';
                         $filePresent = true;
@@ -258,8 +258,8 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                         echo '<span class="notice warning">',
                         'Your database configuration file is NOT present.',
                         '<br>',
-                        'Rename ', $configDir, '<strong>database.config.php.default</strong> to ', 
-                        $configDir, '<strong>database.config.php</strong>',
+                        'Rename ', SMC_CONFIG, '/<strong>database.config.php.default</strong> to ', 
+                        SMC_CONFIG, '/<strong>database.config.php</strong>',
                         '</span>';
                     endif;
                 ?>
