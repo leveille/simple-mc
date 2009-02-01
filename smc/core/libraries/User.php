@@ -108,7 +108,7 @@ class User
         $mysql['id'] = $this->_db->real_escape_string($clean['id']);
         $mysql['username'] = $this->_db->real_escape_string($clean['username']);
         
-        $sql = sprintf("SELECT id FROM `%susers` WHERE username = '%s' AND id = %s LIMIT 1", Database::getTablePrefix(), $mysql['username'], $mysql['id']);
+        $sql = sprintf("SELECT id FROM `%susers` WHERE username = '%s' AND id = '%s' LIMIT 1", Database::getTablePrefix(), $mysql['username'], $mysql['id']);
         
         $belongsToUser = false;
         
@@ -296,7 +296,7 @@ class User
                 $json .= "draggable: false,";
                 $json .= "children: [";
                 
-                $sql2 = sprintf("SELECT id, username FROM `%susers` WHERE role_id = %s ORDER BY username", Database::getTablePrefix(), $this->_sanitize->stripTagsEncode($row['id']));
+                $sql2 = sprintf("SELECT id, username FROM `%susers` WHERE role_id = '%s' ORDER BY username", Database::getTablePrefix(), $this->_sanitize->stripTagsEncode($row['id']));
                 
                 if($query2 = $this->_db->query($sql2)) {
                     $j = 1;
