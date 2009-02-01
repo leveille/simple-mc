@@ -99,13 +99,14 @@
         
             return {
                 oFCKeditor: null,
-                smc_core: '',
+                smcRoot : '',
+                smcCore: '',
                 javascripts: '',
                 init: function()
                 {
                     //throughout the duration of this administrative session
                     //ensure that the administrator is logged in
-                    var auth = new SMC_AUTH({path : SMC_ADMIN.smc_core, timer : 120});
+                    var auth = new SMC_AUTH({path : SMC_ADMIN.smcRoot, timer : 120});
                     auth.initiateAuthTaskRunner();
                     
                     Ext.BLANK_IMAGE_URL = '<?php echo SMC_EXT_REL; ?>/resources/images/default/s.gif';
@@ -128,7 +129,8 @@
         
         Ext.onReady(function(){
             SMC_ADMIN.javascripts = '<?php echo SMC_JAVASCRIPTS_REL; ?>';
-            SMC_ADMIN.smc_core = '<?php echo SMC_CORE_REL; ?>';
+            SMC_ADMIN.smcRoot = '<?php echo SMC_REL; ?>';
+            SMC_ADMIN.smcCore = '<?php echo SMC_CORE_REL; ?>';
             SMC_ADMIN.init();
         });
         -->

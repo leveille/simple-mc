@@ -30,7 +30,7 @@ Ext.apply(SMC_AUTH.prototype, {
     
     authenticate: function(){
         Ext.Ajax.request({
-            url: this.path + '/action/check_auth.php',
+            url: this.path + '/core/action/check_auth.php',
             scope: this,
             success: function(r, o){
                 response = Ext.util.JSON.decode(r.responseText);
@@ -51,8 +51,7 @@ Ext.apply(SMC_AUTH.prototype, {
         Ext.MessageBox.confirm('Automatic Logout', 'Your administrative session has expired.  Any changes you made within the last ' + this.timer + ' seconds may not have been saved.  Would you like to authenticate and continue?', function(choice){
             if (choice == 'yes') {
                 window.top.location.href = this.path;
-            }
-            else {
+            } else {
                 window.top.location.href = this.path + '/logout.php';
             }
         }, this);

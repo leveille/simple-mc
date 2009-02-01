@@ -34,6 +34,7 @@ if($_SESSION['isAdmin'] || $_SESSION['isEditor']): ?>
     <script>
         Ext.onReady(function() {
             try {
+                SMC.smcRoot = '<?php echo SMC_REL; ?>';
                 SMC.smcCore = '<?php echo SMC_CORE_REL; ?>';
                 SMC.editorName = "baiEditor";
                 

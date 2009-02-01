@@ -21,7 +21,7 @@ ContentGrid = function(viewer, config){
     
     //Grab the data that represents our content blocks and push it into a data store
     this.store = new Ext.data.JsonStore({
-        url: SMC_ADMIN.smc_core + '/admin/action/get-content-blocks.php',
+        url: SMC_ADMIN.smcCore + '/admin/action/get-content-blocks.php',
         id: 'content-store',
         root: 'results',
         fields: [{
@@ -279,7 +279,7 @@ Ext.extend(ContentGrid, Ext.grid.EditorGridPanel, {
     contentSave: function(action){
     
         //let's ensure that the user is authenticated prior to saving any content
-        var auth = new SMC_AUTH({path : SMC_ADMIN.smc_core});
+        var auth = new SMC_AUTH({path : SMC_ADMIN.smcRoot});
         auth.authenticate();
         
         var record, panel, win, contentForm, icon;

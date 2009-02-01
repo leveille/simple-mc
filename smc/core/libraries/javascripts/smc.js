@@ -169,7 +169,7 @@ SMC = function(){
          * is opened, and the admin walks away and comes back
          */
         
-        var auth = new SMC_AUTH({path : SMC.smcCore});
+        var auth = new SMC_AUTH({path : SMC.smcRoot});
         auth.authenticate()
         
         var id = getId($this);
@@ -226,12 +226,13 @@ SMC = function(){
         cp : '', //cookie provider
         editorName : '',
         smcCore : '',
+        smcRoot : '',
         init: function()
         {
             //set up the authentication timer to ensure authentication
             //check every x seconds
             //ensure this user remains logged in
-            var auth = new SMC_AUTH({path : SMC.smcCore, timer : 120});
+            var auth = new SMC_AUTH({path : SMC.smcRoot, timer : 120});
             auth.initiateAuthTaskRunner()
             
             /***
