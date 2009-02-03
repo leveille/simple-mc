@@ -164,7 +164,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                     <?php endif; ?>
                 </ul>
             </div>
-            
+
             <ul>
                 <li><strong>Code</strong>: 
                     <a href="http://github.com/leveille/simple-mc/tree/master">
@@ -177,7 +177,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                 </li>
                 <li><strong>Live Demo</strong>: 
                     <a href="http://smc.jasonleveille.com/">
-                    http://smc.jasonleveille.com/</a>
+                    http://smc.jasonleveille.com/</a> - <strong>un: admin pw: admin OR un: editor pw: editor</strong>
                 </li>
                 <li><strong>Google Group</strong>: 
                     <a href="http://groups.google.com/group/simple_mc">
@@ -326,7 +326,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                 <li>Have fun!</li>
             </ol>
             
-            <h2>Running the Demo Application</h2>
+            <h2 id="demo-instructions">Running the Demo Application</h2>
             <p>This project does come with a (quickly hobbled together) demonstration application.</p>
             <ol>
                 <li><strong>FYI</strong>, even though the demo is located in the smc directory, 
