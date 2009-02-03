@@ -167,7 +167,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             
             <ul>
                 <li><strong>Code</strong>: 
-                    <a href="http://github.com/leveille/simplemc/tree/master">
+                    <a href="http://github.com/leveille/simple-mc/tree/master">
                     http://github.com/leveille/simplemc/tree/master</a>
                 </li>
                 <li><strong>Issue Tracker</strong>: 
