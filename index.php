@@ -62,7 +62,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
             
             #container {
                 text-align: left;
-                width: 90%;
+                width: 960px;
                 margin-left: auto;
                 margin-right: auto;
                 background: #FFF;
