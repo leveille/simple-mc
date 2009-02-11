@@ -332,7 +332,7 @@ include_once(dirname(__FILE__) . '/smc/config/config.ini.php');
                 <li><strong>FYI</strong>, even though the demo is located in the smc directory, 
                 it is strongly advised that you do NOT create your site files in the smc directory. 
                 Instead, drop the smc directory in your site root and reference the necessary files. </li>
-                <li>Import the /smc/config/sql/dmtek_demo.sql file into the blocks table that 
+                <li>Import the /smc/config/sql/smc_demo.sql file into the blocks table that 
                 you should have in your SimpleMC database</li>
                 <li>If you haven't already, <a href="smc/">login to the administrator.</a>
                     <ul>
