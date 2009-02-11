@@ -25,7 +25,7 @@ SimpleMC is meant to provide an easy way for content editors to edit blocks of c
 ##Simple MC Setup##
 * Download and unzip SimpleMC to your desired location.
 * At this point you should have a directory structure that looks similar to:
-    /root
+        /root
         -index.php
         -/smc
 * Create a mysql database for your project
@@ -48,7 +48,6 @@ SimpleMC is meant to provide an easy way for content editors to edit blocks of c
 * FYI, even though the demo is located in the smc directory, it is strongly advised that you do NOT create your site files in the smc directory. Instead, drop the smc directory in your site root and reference the necessary files.
 * Import the /smc/config/sql/smc_demo.sql file into the blocks table that you should have in your SimpleMC database
 * If you haven't already, login to the administrator.
-    -un1: admin OR un2: editor
-    -pw1: admin OR pw2: editor
+    - un1: admin OR un2: editor
+    - pw1: admin OR pw2: editor
 * Visit the demo.
-
