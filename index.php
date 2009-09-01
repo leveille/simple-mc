@@ -13,7 +13,8 @@
  *
  * == END LICENSE ==
  */
-session_start();
+include_once(dirname(__FILE__) . '/smc/core/libraries/Session.php');
+SessionManager::sessionStart('SMC');
 
 $filePresent = null;
 $configDir = dirname(__FILE__) . '/smc/config/';

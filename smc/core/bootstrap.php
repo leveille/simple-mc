@@ -13,7 +13,8 @@
  *
  * == END LICENSE ==
  */
-    session_start();
+    include_once(dirname(__FILE__) . '/libraries/Session.php');
+    SessionManager::sessionStart('SMC');
     
     define("SMC", ROOT . SMC_REL);
     define("SMC_CORE", SMC . '/core');

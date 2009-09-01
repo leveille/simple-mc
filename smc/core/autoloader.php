@@ -14,7 +14,7 @@
  * == END LICENSE ==
  */
     function class_autoloader($c) 
-    {      
+    {
         $include_path = get_include_path();
         $include_path_tokens = explode(PATH_SEPARATOR, $include_path);
 
