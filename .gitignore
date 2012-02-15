@@ -9,3 +9,5 @@ smc/core/vendors/htmlpurifiersa/standalone/HTMLPurifier/DefinitionCache/Serializ
 .project
 smc/tmp/cache/minify_*
 smc/tmp/cache/smc_*
+.idea
+
